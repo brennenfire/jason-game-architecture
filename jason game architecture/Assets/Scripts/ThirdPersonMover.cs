@@ -7,6 +7,13 @@ public class ThirdPersonMover : MonoBehaviour
     [SerializeField] float turnSpeed = 1000;
     [SerializeField] float moveSpeed = 5f;
     new Rigidbody rigidbody;
+    Animator animator;
+
+    void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -19,10 +26,16 @@ public class ThirdPersonMover : MonoBehaviour
     {
         var horizontalInput = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            vertical *= 2f;
+        }
 
         var velocity = new Vector3(horizontalInput, 0, vertical);
         velocity *= moveSpeed * Time.fixedDeltaTime;
         var offset = transform.rotation * velocity;
         rigidbody.MovePosition(transform.position + offset);
+
+        animator.SetFloat("Speed", vertical, 0.1f, Time.deltaTime);
     }
 }
