@@ -24,18 +24,19 @@ public class ThirdPersonMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        var horizontalInput = Input.GetAxis("Horizontal");
+        var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
         if(Input.GetKey(KeyCode.LeftShift))
         {
             vertical *= 2f;
         }
 
-        var velocity = new Vector3(horizontalInput, 0, vertical);
+        var velocity = new Vector3(horizontal, 0, vertical);
         velocity *= moveSpeed * Time.fixedDeltaTime;
         var offset = transform.rotation * velocity;
         rigidbody.MovePosition(transform.position + offset);
 
-        animator.SetFloat("Speed", vertical, 0.1f, Time.deltaTime);
+        animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
+        animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
     }
 }
