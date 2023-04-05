@@ -9,14 +9,14 @@ using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
-    [SerializeField] TextAsset dialog;
+    
     [SerializeField] TMP_Text storyText;
     [SerializeField] Button[] choiceButtons;
 
     Story story;
 
     [ContextMenu("StartCoroutine Dialog")]
-    public void StartDialog()
+    public void StartDialog(TextAsset dialog)
     {
         story = new Story(dialog.text);
         RefreshView();
