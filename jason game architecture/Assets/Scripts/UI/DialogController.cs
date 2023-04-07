@@ -12,6 +12,7 @@ public class DialogController : MonoBehaviour
     
     [SerializeField] TMP_Text storyText;
     [SerializeField] Button[] choiceButtons;
+    [SerializeField] Animator animator;
 
     Story story;
 
@@ -28,11 +29,12 @@ public class DialogController : MonoBehaviour
         while(story.canContinue)
         {
             storyTextBuilder.AppendLine(story.Continue());
-
-            storyText.SetText(storyTextBuilder);
+            HandleTags();
         }
 
-        for(int i = 0; choiceButtons.Length > i; i++) 
+        storyText.SetText(storyTextBuilder);
+
+        for (int i = 0; choiceButtons.Length > i; i++) 
         {
             var button = choiceButtons[i];
             button.gameObject.SetActive(i < story.currentChoices.Count);
@@ -48,5 +50,24 @@ public class DialogController : MonoBehaviour
                 });
             }
         }
+
+        
+    }
+
+    void HandleTags()
+    {
+        foreach(var tag in story.currentTags) 
+        {
+            Debug.Log(tag);
+            if(tag == "OpenDoor")
+            {
+                OpenDoor();
+            }
+        }
+    }
+
+    void OpenDoor()
+    {
+        animator.SetTrigger("Open");
     }
 }

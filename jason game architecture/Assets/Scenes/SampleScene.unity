@@ -2700,6 +2700,7 @@ MonoBehaviour:
   - {fileID: 365832776}
   - {fileID: 1591784131}
   - {fileID: 1719405914}
+  animator: {fileID: 824192662}
 --- !u!1 &1330809733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,7 +2930,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-11430
+  m_Name: pb_Mesh24268
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
