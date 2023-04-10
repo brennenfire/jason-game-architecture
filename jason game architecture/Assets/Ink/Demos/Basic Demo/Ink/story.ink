@@ -1,7 +1,7 @@
 - I looked at Monsieur Fogg 
 *   ... with my legs trembling
     'The key to the outhouse?'
-    he sighed and raised his palm, revealing the key. #OpenDoor 
+    he sighed and raised his palm, revealing the key. #E.OpenGreenDoor 
 *   ... and I could contain myself no longer.
     'What is the purpose of our journey, Monsieur?'
     'A wager,' he replied.

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,11 +60,16 @@ public class DialogController : MonoBehaviour
         foreach(var tag in story.currentTags) 
         {
             Debug.Log(tag);
-            if(tag == "OpenDoor")
+            if(tag.StartsWith("E."))
             {
-                OpenDoor();
+                ProcessEvent(tag);
             }
         }
+    }
+
+    private void ProcessEvent(string tag)
+    {
+        
     }
 
     void OpenDoor()
