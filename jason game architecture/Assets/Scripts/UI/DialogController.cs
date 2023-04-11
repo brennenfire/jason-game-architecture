@@ -62,16 +62,11 @@ public class DialogController : MonoBehaviour
             Debug.Log(tag);
             if(tag.StartsWith("E."))
             {
-                ProcessEvent(tag);
+                string eventName = tag.Remove(0, 2);
+                GameEvent.RaiseEvent(eventName);
             }
         }
     }
-
-    private void ProcessEvent(string tag)
-    {
-        
-    }
-
     void OpenDoor()
     {
         animator.SetTrigger("Open");
