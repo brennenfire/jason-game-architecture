@@ -15,6 +15,7 @@ public class ThirdPersonMover : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        mouseMovement = Input.GetAxis("Mouse X");
     }
 
     void Update()
