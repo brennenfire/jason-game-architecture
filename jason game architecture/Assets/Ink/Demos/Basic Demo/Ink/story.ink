@@ -1,22 +1,17 @@
-- I looked at Monsieur Fogg 
-*   ... with my legs trembling
-    'The key to the outhouse?'
-    he sighed and raised his palm, revealing the key. #E.OpenGreenDoor 
-*   ... and I could contain myself no longer.
-    'What is the purpose of our journey, Monsieur?'
-    'A wager,' he replied.
-    * *     'A wager!'[] I returned.
-            He nodded. 
-            * * *   'But surely that is foolishness!'
-            * * *  'A most serious matter then!'
-            - - -   He nodded again.
-            * * *   'But can we win?'
-                    'That is what we will endeavour to find out,' he answered.
-            * * *   'A modest wager, I trust?'
-                    'Twenty thousand pounds,' he replied, quite flatly.
-            * * *   I asked nothing further of him then[.], and after a final, polite cough, he offered nothing more to me. <>
-    * *     'Ah[.'],' I replied, uncertain what I thought.
-    - -     After that, <>
-*   ... but I said nothing[] and <>
-- we passed the day in silence.
+where have you been jackass
+* i clogged the toilet
+    - open the door. im freezing #E.ShowGreenDoor
+    * fine whatever bro 
+    -> instructions
+    * no i dont feel like it 
+      are you serious right now
+    -> END
+    
+== instructions == 
+ you couldve just given me the key from the getgo
+    * nuh-uh
+    just open the damn door already
+    * * he he #E.ShowMat 
+    -> END
+
 - -> END
