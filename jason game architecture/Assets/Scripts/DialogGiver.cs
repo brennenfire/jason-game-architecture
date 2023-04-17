@@ -12,14 +12,8 @@ public class DialogGiver : MonoBehaviour
         var player = other.GetComponent<ThirdPersonMover>();
         if (player != null)
         {
-            canvas.gameObject.SetActive(true);
             FindObjectOfType<DialogController>().StartDialog(dialog);
             transform.LookAt(player.transform.position);
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        canvas.gameObject.SetActive(false);
     }
 }

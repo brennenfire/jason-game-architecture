@@ -13,15 +13,36 @@ public class DialogController : MonoBehaviour
     
     [SerializeField] TMP_Text storyText;
     [SerializeField] Button[] choiceButtons;
-    [SerializeField] Animator animator;
 
     Story story;
+    CanvasGroup canvasGroup;
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+        ToggleCanvasOff();
+    }
 
     [ContextMenu("StartCoroutine Dialog")]
     public void StartDialog(TextAsset dialog)
     {
         story = new Story(dialog.text);
         RefreshView();
+        ToggleCanvasOn();
+    }
+
+    void ToggleCanvasOn()
+    {
+        canvasGroup.alpha = 0.5f;
+        canvasGroup.interactable= true;
+        canvasGroup.blocksRaycasts = true;
+    }
+
+    void ToggleCanvasOff()
+    {
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
     }
 
     void RefreshView()
@@ -35,12 +56,25 @@ public class DialogController : MonoBehaviour
 
         storyText.SetText(storyTextBuilder);
 
-        for (int i = 0; choiceButtons.Length > i; i++) 
+        if (story.currentChoices.Count == 0)
+        {
+            ToggleCanvasOff();
+        }
+        else
+        {
+            ShowChoiceButtons();
+        }
+
+    }
+
+    private void ShowChoiceButtons()
+    {
+        for (int i = 0; choiceButtons.Length > i; i++)
         {
             var button = choiceButtons[i];
             button.gameObject.SetActive(i < story.currentChoices.Count);
             button.onClick.RemoveAllListeners();
-            if(i < story.currentChoices.Count)
+            if (i < story.currentChoices.Count)
             {
                 var choice = story.currentChoices[i];
                 button.GetComponentInChildren<TMP_Text>().SetText(choice.text);
@@ -51,8 +85,6 @@ public class DialogController : MonoBehaviour
                 });
             }
         }
-
-        
     }
 
     void HandleTags()
@@ -67,8 +99,11 @@ public class DialogController : MonoBehaviour
             }
         }
     }
+
+    /*
     void OpenDoor()
     {
         animator.SetTrigger("Open");
     }
+    */
 }
