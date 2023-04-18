@@ -10,8 +10,8 @@ where have you been jackass
 == instructions == 
  you couldve just given me the key from the getgo
     * nuh-uh
-    just open the damn door already
-    * * he he #E.ShowMat 
+    just open the damn door already #E.ShowMat
+    * * he he #E.ShowPlayer
     -> END
 
 - -> END
