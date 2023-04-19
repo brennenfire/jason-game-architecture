@@ -4,14 +4,14 @@ where have you been jackass
     * fine whatever bro 
     -> instructions
     * no i dont feel like it 
-      are you serious right now
+      are you serious right now #E.HideGreenDoor
     -> END
     
 == instructions == 
  you couldve just given me the key from the getgo
     * nuh-uh
     just open the damn door already #E.ShowMat
-    * * he he #E.ShowPlayer
+    * * he he #E.HideMat #E.HideGreenDoor
     -> END
 
 - -> END
