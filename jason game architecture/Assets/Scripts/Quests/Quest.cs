@@ -7,13 +7,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Quest")]
 public class Quest : ScriptableObject
 {
-    [SerializeField] string name;
+    [SerializeField] string displayName;
     [SerializeField] string description;
 
     [Tooltip("designer / programmer notes, not visible to player")]
     [SerializeField] string notes;
-    
+
+    [SerializeField] Sprite sprite;
+
     public List<Step> steps;
+    
+
+    public string Description => description;
+    public string DisplayName => displayName;
+    public Sprite Sprite => sprite;
 }
 
 
@@ -21,7 +28,8 @@ public class Quest : ScriptableObject
 public class Step
 {
     [SerializeField] string instructions;
-    public List<Objective> objectives;
+    public string Instructions => instructions;
+    public List<Objective> Objectives;
 }
 
 [Serializable]
@@ -33,5 +41,10 @@ public class Objective
         Flag,
         Item,
         Kill
+    }
+
+    public override string ToString()
+    {
+        return objectiveType.ToString();
     }
 }
