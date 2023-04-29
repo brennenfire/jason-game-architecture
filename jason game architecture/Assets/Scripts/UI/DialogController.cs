@@ -8,41 +8,20 @@ using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogController : MonoBehaviour
+public class DialogController : ToggleablePanel
 {
     
     [SerializeField] TMP_Text storyText;
     [SerializeField] Button[] choiceButtons;
 
     Story story;
-    CanvasGroup canvasGroup;
-
-    void Awake()
-    {
-        canvasGroup = GetComponent<CanvasGroup>();
-        ToggleCanvasOff();
-    }
-
+    
     [ContextMenu("StartCoroutine Dialog")]
     public void StartDialog(TextAsset dialog)
     {
         story = new Story(dialog.text);
         RefreshView();
-        ToggleCanvasOn();
-    }
-
-    void ToggleCanvasOn()
-    {
-        canvasGroup.alpha = 0.5f;
-        canvasGroup.interactable= true;
-        canvasGroup.blocksRaycasts = true;
-    }
-
-    void ToggleCanvasOff()
-    {
-        canvasGroup.alpha = 0f;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
+        Show();
     }
 
     void RefreshView()
@@ -58,7 +37,7 @@ public class DialogController : MonoBehaviour
 
         if (story.currentChoices.Count == 0)
         {
-            ToggleCanvasOff();
+            Hide();
         }
         else
         {
