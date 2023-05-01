@@ -24,14 +24,15 @@ public class QuestPanel : ToggleablePanel
         descriptionText.SetText(selectedQuest.Description);
 
         selectedStep = selectedQuest.steps.FirstOrDefault();
-        DisplayStepObjectives();
+        
     }
 
-    internal void SelectQuest(Quest quest)
+    public void SelectQuest(Quest quest)
     {
         selectedQuest = quest;
         Bind();
         Show();
+        DisplayStepObjectives();
     }
 
     private void DisplayStepObjectives()

@@ -10,7 +10,7 @@ where have you been jackass
 == instructions == 
  you couldve just given me the key from the getgo
     * nuh-uh
-    just open the damn door already #E.ShowMat
+    just open the damn door already #E.ShowMat #Q.InspectThePanel
     * * he he #E.HideMat #E.HideGreenDoor
     -> END
 
