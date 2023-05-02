@@ -32,4 +32,12 @@ public class QuestManager : MonoBehaviour
         else
             Debug.LogError("missing quest");
     }
+
+    public void ProgressQuests()
+    {
+        foreach(var quest in activeQuests) 
+        {
+            quest.TryProgress();
+        }
+    }
 }
