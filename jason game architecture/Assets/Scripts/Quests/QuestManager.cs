@@ -33,6 +33,7 @@ public class QuestManager : MonoBehaviour
             Debug.LogError("missing quest");
     }
 
+    [ContextMenu("Progress Quests")]
     public void ProgressQuests()
     {
         foreach(var quest in activeQuests) 

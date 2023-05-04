@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Quest")]
 public class Quest : ScriptableObject
 {
+    public event Action Progressed;
+
     [SerializeField] string displayName;
     [SerializeField] string description;
 
@@ -23,17 +26,22 @@ public class Quest : ScriptableObject
     public string DisplayName => displayName;
     public Sprite Sprite => sprite;
 
+    public Step CurrentStep => steps[currentStepIndex];
+
+    void OnEnable()
+    {
+        currentStepIndex = 0;    
+    }
+
     internal void TryProgress()
     {
         var currentStep = GetCurrentStep();
         if(currentStep.HasAllObjectivesCompleted())
         {
             currentStepIndex++;
-
+            Progressed?.Invoke();
         }
     }
-
-    
 
     Step GetCurrentStep()
     {
@@ -59,8 +67,7 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType objectiveType;
-
-    public bool IsCompleted { get; internal set; }
+    [SerializeField] GameFlag gameFlag;
 
     public enum ObjectiveType
     {
@@ -69,8 +76,26 @@ public class Objective
         Kill
     }
 
+    public bool IsCompleted
+    {
+        get
+        {
+            switch(objectiveType) 
+            {
+                case ObjectiveType.Flag: return gameFlag.Value;
+                default: return false;
+            }
+        }
+    }
+
     public override string ToString()
     {
-        return objectiveType.ToString();
+        switch (objectiveType)
+        {
+            case ObjectiveType.Flag: return gameFlag.name;
+            default: return objectiveType.ToString();
+        }
     }
+
+    //public override string ToString() => objectiveType.ToString();
 }

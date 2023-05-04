@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questPanel: {fileID: 1468228797}
   allQuests:
-  - {fileID: 11400000, guid: 5b4a23239580c6b409234f745a1e2cbf, type: 2}
+  - {fileID: 11400000, guid: bd0c608bdc7d88b48b08748d0efa4892, type: 2}
 --- !u!4 &157842603
 Transform:
   m_ObjectHideFlags: 0
@@ -8685,7 +8685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656a514b6eff1fd4b999dae1cc236cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedQuest: {fileID: 11400000, guid: 5b4a23239580c6b409234f745a1e2cbf, type: 2}
+  selectedQuest: {fileID: 11400000, guid: bd0c608bdc7d88b48b08748d0efa4892, type: 2}
   selectedStep:
     instructions: 
     Objectives: []
