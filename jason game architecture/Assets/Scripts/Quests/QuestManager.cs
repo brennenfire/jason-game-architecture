@@ -16,6 +16,16 @@ public class QuestManager : MonoBehaviour
         Instance = this;    
     }
 
+    void Start()
+    {
+        GameFlag.AnyChanged += ProgressQuests;    
+    }
+
+    void OnDestroy()
+    {
+        GameFlag.AnyChanged -= ProgressQuests;
+    }
+
     public void AddQuest(Quest quest)
     {
         activeQuests.Add(quest);
