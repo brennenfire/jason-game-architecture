@@ -6,7 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Bool Game Flag")]
 public class GameFlag : ScriptableObject
 {
-    public static event Action AnyChanged;
+    //public static event Action AnyChanged;
+    public event Action Changed;
 
     public bool Value { get; private set; }
 
@@ -23,6 +24,7 @@ public class GameFlag : ScriptableObject
     public void Set(bool value)
     {
         Value = value;
-        AnyChanged?.Invoke();
+        //AnyChanged?.Invoke();
+        Changed?.Invoke();
     }
 }

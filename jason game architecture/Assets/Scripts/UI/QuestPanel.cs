@@ -32,7 +32,7 @@ public class QuestPanel : ToggleablePanel
         
         if(selectedQuest != null) 
         {
-            selectedQuest.Progressed -= DisplayStepObjectives;
+            selectedQuest.Changed -= DisplayStepObjectives;
         }
         
         selectedQuest = quest;
@@ -40,7 +40,7 @@ public class QuestPanel : ToggleablePanel
         Show();
         //DisplayStepObjectives();
 
-        selectedQuest.Progressed += DisplayStepObjectives;
+        selectedQuest.Changed += DisplayStepObjectives;
     }
 
     private void DisplayStepObjectives()
@@ -51,7 +51,8 @@ public class QuestPanel : ToggleablePanel
             builder.AppendLine(selectedStep.Instructions);
             foreach (var objective in selectedStep.Objectives)
             {
-                builder.AppendLine(objective.ToString());
+                string rgb = objective.IsCompleted ? "green" : "grey";
+                builder.AppendLine($"<color={rgb}>{objective}</color>");
 
             }
         }

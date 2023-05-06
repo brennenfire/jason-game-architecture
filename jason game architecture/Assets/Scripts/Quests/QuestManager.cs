@@ -16,6 +16,7 @@ public class QuestManager : MonoBehaviour
         Instance = this;    
     }
 
+    /*
     void Start()
     {
         GameFlag.AnyChanged += ProgressQuests;    
@@ -25,6 +26,7 @@ public class QuestManager : MonoBehaviour
     {
         GameFlag.AnyChanged -= ProgressQuests;
     }
+    */
 
     public void AddQuest(Quest quest)
     {
@@ -43,6 +45,7 @@ public class QuestManager : MonoBehaviour
             Debug.LogError("missing quest");
     }
 
+    /*
     [ContextMenu("Progress Quests")]
     public void ProgressQuests()
     {
@@ -51,4 +54,5 @@ public class QuestManager : MonoBehaviour
             quest.TryProgress();
         }
     }
+    */
 }

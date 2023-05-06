@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Quest")]
 public class Quest : ScriptableObject
 {
-    public event Action Progressed;
+    public event Action Changed;
 
     [SerializeField] string displayName;
     [SerializeField] string description;
@@ -30,7 +31,23 @@ public class Quest : ScriptableObject
 
     void OnEnable()
     {
-        currentStepIndex = 0;    
+        currentStepIndex = 0;
+        foreach(var step in steps)
+        {
+            foreach(var objective in step.Objectives) 
+            {
+                if(objective.GameFlag != null)
+                {
+                    objective.GameFlag.Changed += HandleFlagChanged;
+                }
+            }
+        }
+    }
+
+    void HandleFlagChanged()
+    {
+        TryProgress();
+        Changed?.Invoke();
     }
 
     internal void TryProgress()
@@ -39,7 +56,7 @@ public class Quest : ScriptableObject
         if(currentStep.HasAllObjectivesCompleted())
         {
             currentStepIndex++;
-            Progressed?.Invoke();
+            Changed?.Invoke();
         }
     }
 
@@ -69,6 +86,8 @@ public class Objective
     [SerializeField] ObjectiveType objectiveType;
     [SerializeField] GameFlag gameFlag;
 
+    public GameFlag GameFlag => gameFlag;
+
     public enum ObjectiveType
     {
         Flag,
@@ -87,6 +106,7 @@ public class Objective
             }
         }
     }
+
 
     public override string ToString()
     {

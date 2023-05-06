@@ -21,6 +21,8 @@ MonoBehaviour:
     Objectives:
     - objectiveType: 0
       gameFlag: {fileID: 11400000, guid: 9882f26a7994a6746be94236f5e99fe8, type: 2}
+    - objectiveType: 0
+      gameFlag: {fileID: 11400000, guid: f23c9eccfffe5da40bfcd4a35b13f594, type: 2}
   - instructions: go look at door
     Objectives:
     - objectiveType: 0
