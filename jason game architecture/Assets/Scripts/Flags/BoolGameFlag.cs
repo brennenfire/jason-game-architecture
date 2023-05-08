@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Bool Game Flag")]
-public class GameFlag : ScriptableObject
+public class BoolGameFlag : ScriptableObject
 {
     //public static event Action AnyChanged;
     public event Action Changed;

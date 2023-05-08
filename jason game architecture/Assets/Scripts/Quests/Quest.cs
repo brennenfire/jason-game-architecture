@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,9 +37,13 @@ public class Quest : ScriptableObject
         {
             foreach(var objective in step.Objectives) 
             {
-                if(objective.GameFlag != null)
+                if(objective.GameFlagBool != null)
                 {
-                    objective.GameFlag.Changed += HandleFlagChanged;
+                    objective.GameFlagBool.Changed += HandleFlagChanged;
+                }
+                if(objective.GameFlagInt != null)
+                {
+                    objective.GameFlagInt.Changed += HandleFlagChanged;
                 }
             }
         }
@@ -84,13 +89,21 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType objectiveType;
-    [SerializeField] GameFlag gameFlag;
+    [SerializeField] BoolGameFlag boolGameFlag;
 
-    public GameFlag GameFlag => gameFlag;
+    [Header("int game flags")]
+    [SerializeField] IntGameFlag intGameFlag;
+
+    [Tooltip("required amount for the counted int game flag")]
+    [SerializeField] int required;
+
+    public BoolGameFlag GameFlagBool => boolGameFlag;
+    public IntGameFlag GameFlagInt => intGameFlag;
 
     public enum ObjectiveType
     {
-        Flag,
+        BoolFlag,
+        CountedIntFlag,
         Item,
         Kill
     }
@@ -101,7 +114,8 @@ public class Objective
         {
             switch(objectiveType) 
             {
-                case ObjectiveType.Flag: return gameFlag.Value;
+                case ObjectiveType.BoolFlag: return boolGameFlag.Value;
+                case ObjectiveType.CountedIntFlag: return intGameFlag.Value >= required;
                 default: return false;
             }
         }
@@ -112,7 +126,8 @@ public class Objective
     {
         switch (objectiveType)
         {
-            case ObjectiveType.Flag: return gameFlag.name;
+            case ObjectiveType.BoolFlag: return boolGameFlag.name;
+            case ObjectiveType.CountedIntFlag: return $"{intGameFlag.name} ({intGameFlag.Value} / {required})";
             default: return objectiveType.ToString();
         }
     }
