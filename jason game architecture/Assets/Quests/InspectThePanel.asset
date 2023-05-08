@@ -23,19 +23,15 @@ MonoBehaviour:
       boolGameFlag: {fileID: 0}
       intGameFlag: {fileID: 11400000, guid: 72fe4607f36b49444a48fc6b7bc16f37, type: 2}
       required: 2
-  - instructions: go look at door
-    Objectives:
-    - objectiveType: 0
-      boolGameFlag: {fileID: 0}
-      intGameFlag: {fileID: 0}
-      required: 0
   - instructions: go look at panel
     Objectives:
     - objectiveType: 0
-      boolGameFlag: {fileID: 0}
+      boolGameFlag: {fileID: 11400000, guid: 9882f26a7994a6746be94236f5e99fe8, type: 2}
       intGameFlag: {fileID: 0}
       required: 0
+  - instructions: go look at door
+    Objectives:
     - objectiveType: 0
-      boolGameFlag: {fileID: 0}
+      boolGameFlag: {fileID: 11400000, guid: 0da5b7d47f5f3c344be051de426022c1, type: 2}
       intGameFlag: {fileID: 0}
       required: 0
