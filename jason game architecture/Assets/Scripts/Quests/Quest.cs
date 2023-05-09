@@ -37,13 +37,9 @@ public class Quest : ScriptableObject
         {
             foreach(var objective in step.Objectives) 
             {
-                if(objective.GameFlagBool != null)
+                if(objective.GameFlag != null)
                 {
-                    objective.GameFlagBool.Changed += HandleFlagChanged;
-                }
-                if(objective.GameFlagInt != null)
-                {
-                    objective.GameFlagInt.Changed += HandleFlagChanged;
+                    objective.GameFlag.Changed += HandleFlagChanged;
                 }
             }
         }
@@ -83,54 +79,4 @@ public class Step
     {
         return Objectives.TrueForAll(t => t.IsCompleted);
     }
-}
-
-[Serializable]
-public class Objective
-{
-    [SerializeField] ObjectiveType objectiveType;
-    [SerializeField] BoolGameFlag boolGameFlag;
-
-    [Header("int game flags")]
-    [SerializeField] IntGameFlag intGameFlag;
-
-    [Tooltip("required amount for the counted int game flag")]
-    [SerializeField] int required;
-
-    public BoolGameFlag GameFlagBool => boolGameFlag;
-    public IntGameFlag GameFlagInt => intGameFlag;
-
-    public enum ObjectiveType
-    {
-        BoolFlag,
-        CountedIntFlag,
-        Item,
-        Kill
-    }
-
-    public bool IsCompleted
-    {
-        get
-        {
-            switch(objectiveType) 
-            {
-                case ObjectiveType.BoolFlag: return boolGameFlag.Value;
-                case ObjectiveType.CountedIntFlag: return intGameFlag.Value >= required;
-                default: return false;
-            }
-        }
-    }
-
-
-    public override string ToString()
-    {
-        switch (objectiveType)
-        {
-            case ObjectiveType.BoolFlag: return boolGameFlag.name;
-            case ObjectiveType.CountedIntFlag: return $"{intGameFlag.name} ({intGameFlag.Value} / {required})";
-            default: return objectiveType.ToString();
-        }
-    }
-
-    //public override string ToString() => objectiveType.ToString();
 }
