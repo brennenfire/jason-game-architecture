@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Counted Int Game Flag")]
+[CreateAssetMenu(menuName = "Game Flag/String Game Flag")]
 public class StringGameFlag : GameFlag<string>
 {
     public void Modify(string value)

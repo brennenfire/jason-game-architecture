@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Decimal Game Flag")]
+[CreateAssetMenu(menuName = "Game Flag/Decimal Game Flag")]
 public class DecimalGameFlag : GameFlag<decimal>
 {
     public void Modify(decimal value)
