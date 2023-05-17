@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class FlagManager : MonoBehaviour
 {
-    [SerializeField] List<GameFlag> allFlags;
+    [SerializeField] GameFlag[] allFlags;
 
-    Dictionary<string, GameFlag> flagsByName; 
+    Dictionary<string, GameFlag> flagsByName;
 
     public static FlagManager Instance { get; private set; }
 
@@ -19,6 +20,26 @@ public class FlagManager : MonoBehaviour
     {
         flagsByName = allFlags.ToDictionary(k => k.name,
                                             v => v);    
+    }
+
+    void OnValidate()
+    {
+        //flagTest = FindObjectsOfType<GameFlag>();
+        allFlags = GetAllInstances<GameFlag>();
+    }
+
+    public static T[] GetAllInstances<T>() where T : ScriptableObject
+    {
+        string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);  //FindAssets uses tags check documentation for more info
+        T[] a = new T[guids.Length];
+        for (int i = 0; i < guids.Length; i++)         //probably could get optimized 
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+            a[i] = AssetDatabase.LoadAssetAtPath<T>(path);
+        }
+
+        return a;
+
     }
 
     public void Set(string flagName, string value)
