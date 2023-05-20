@@ -29,3 +29,10 @@ public abstract class GameFlag<T> : GameFlag
         SendChanged();
     }
 }
+
+[Serializable]
+public class GameFlagData
+{
+    public string Name;
+    public string Value;
+}

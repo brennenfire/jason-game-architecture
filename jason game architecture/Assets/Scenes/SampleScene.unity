@@ -8935,6 +8935,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794831465}
   m_CullTransparentMesh: 1
+--- !u!1 &811502894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811502896}
+  - component: {fileID: 811502895}
+  m_Layer: 0
+  m_Name: '[GAMEPERSISTENCE]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &811502895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811502894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dff92db9eb018f4580aa3aab570c104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &811502896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811502894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.204346, y: 2.0545237, z: 12.217911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816135553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
@@ -19503,10 +19547,10 @@ MonoBehaviour:
   allFlags:
   - {fileID: 11400000, guid: f23c9eccfffe5da40bfcd4a35b13f594, type: 2}
   - {fileID: 11400000, guid: 72fe4607f36b49444a48fc6b7bc16f37, type: 2}
+  - {fileID: 11400000, guid: 5ef207fd52c083047a1b762aff6347cd, type: 2}
+  - {fileID: 11400000, guid: 0f13a3c245a5b1c4d96a22cc32f122aa, type: 2}
   - {fileID: 11400000, guid: 0da5b7d47f5f3c344be051de426022c1, type: 2}
   - {fileID: 11400000, guid: 9882f26a7994a6746be94236f5e99fe8, type: 2}
-  - {fileID: 11400000, guid: 0f13a3c245a5b1c4d96a22cc32f122aa, type: 2}
-  - {fileID: 11400000, guid: 5ef207fd52c083047a1b762aff6347cd, type: 2}
 --- !u!4 &1685362101
 Transform:
   m_ObjectHideFlags: 0
