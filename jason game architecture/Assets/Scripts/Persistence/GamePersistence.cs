@@ -19,13 +19,19 @@ public class GamePersistence : MonoBehaviour
     {
         Debug.Log("Saving Game Data");
         var json = JsonUtility.ToJson(gameData);
+        PlayerPrefs.SetString("GameData", json);
         Debug.Log(json);
         Debug.Log("Saving Game Data Complete");
     }
 
     void LoadGameFlags()
     {
-        gameData = new GameData();
+        var json = PlayerPrefs.GetString("GameData");
+        gameData = JsonUtility.FromJson<GameData>(json);
+        if (gameData == null)
+        {
+            new GameData();
+        }
         FlagManager.Instance.Bind(gameData.GameFlagDatas);
     }
 }
