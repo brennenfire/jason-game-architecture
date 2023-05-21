@@ -9,6 +9,6 @@ public class GameData
     public GameData()
     {
         GameFlagDatas = new List<GameFlagData>();
-        GameFlagDatas.Add(new GameFlagData() { Value = "jason 1", Name = "flagname" });
+        //GameFlagDatas.Add(new GameFlagData() { Value = "jason 1", Name = "flagname" });
     }
 }

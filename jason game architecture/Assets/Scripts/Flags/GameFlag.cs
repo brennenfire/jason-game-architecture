@@ -4,14 +4,24 @@ using Unity.VisualScripting;
 
 public abstract class GameFlag : ScriptableObject
 {
+    public GameFlagData GameFlagData {  get; private set; }
+
     public event Action Changed;
 
     protected void SendChanged() => Changed?.Invoke();
+
+    public void Bind(GameFlagData gameFlagData)
+    {
+        GameFlagData = gameFlagData;
+        SetFromData(GameFlagData.Value);
+    }
+
+    protected abstract void SetFromData(string value);
 }
 
 public abstract class GameFlag<T> : GameFlag
 {
-    public T Value { get; protected set; }
+    public T Value { get; private set; }
 
     void OnEnable()
     {

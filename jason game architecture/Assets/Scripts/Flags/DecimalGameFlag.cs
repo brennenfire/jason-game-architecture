@@ -4,9 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game Flag/Decimal Game Flag")]
 public class DecimalGameFlag : GameFlag<decimal>
 {
-    public void Modify(decimal value)
+    protected override void SetFromData(string value)
     {
-        Value += value;
-        SendChanged();
+        if(decimal.TryParse(value, out var decimalValue))
+        {
+            Set(decimalValue);
+        }
     }
 }

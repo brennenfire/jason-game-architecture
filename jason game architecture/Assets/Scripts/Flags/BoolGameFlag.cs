@@ -7,5 +7,11 @@ using UnityEngine;
 public class BoolGameFlag : GameFlag<bool>
 {
     //public static event Action AnyChanged;
-
+    protected override void SetFromData(string value)
+    {
+        if(bool.TryParse(value, out var boolValue)) 
+        {
+            Set(boolValue);
+        }
+    }
 }
