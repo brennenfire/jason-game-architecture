@@ -65,7 +65,7 @@ public class FlagManager : MonoBehaviour
         }
     }
 
-    internal void Bind(List<GameFlagData> gameFlagDatas)
+    public void Bind(List<GameFlagData> gameFlagDatas)
     {
         foreach (var flag in allFlags)
         {

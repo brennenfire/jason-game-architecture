@@ -30,7 +30,7 @@ public class GamePersistence : MonoBehaviour
         gameData = JsonUtility.FromJson<GameData>(json);
         if (gameData == null)
         {
-            new GameData();
+            gameData = new GameData();
         }
         FlagManager.Instance.Bind(gameData.GameFlagDatas);
     }
