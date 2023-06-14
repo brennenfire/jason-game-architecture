@@ -6,7 +6,13 @@ using UnityEngine;
 public class Inspectable : MonoBehaviour
 {
     public static event Action<bool> InspectablesInRangeChanged;
+
     static HashSet<Inspectable> inspectablesInRange = new HashSet<Inspectable>();
+    
+    float timeInspected;
+    [SerializeField] float timeToInspect = 3f;
+
+    public static IReadOnlyCollection<Inspectable> InspectablesInRange => inspectablesInRange;
 
     void OnTriggerEnter(Collider other)
     {
@@ -24,5 +30,21 @@ public class Inspectable : MonoBehaviour
             inspectablesInRange.Remove(this);
             InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
         }
+    }
+
+    public void Inspect()
+    {
+        timeInspected += Time.deltaTime;
+        if(timeInspected >= timeToInspect) 
+        {
+            CompleteInspection();
+        }
+    }
+
+    void CompleteInspection()
+    {
+        gameObject.SetActive(false);
+        inspectablesInRange.Remove(this);
+        InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
     }
 }
