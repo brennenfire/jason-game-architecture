@@ -5,6 +5,7 @@ using UnityEngine;
 public class InspectionPanel : MonoBehaviour
 {
     [SerializeField] TMP_Text hintText;
+    [SerializeField] TMP_Text progressText;
 
     void OnEnable()
     {
@@ -20,5 +21,13 @@ public class InspectionPanel : MonoBehaviour
     void UpdateHintTextState(bool enableHint)
     {
         hintText.enabled = enableHint;
+    }
+
+    void Update()
+    {
+        if (InspectionManager.Inspecting)
+        {
+            progressText.SetText(InspectionManager.InspectionProgress.ToString());
+        }
     }
 }
