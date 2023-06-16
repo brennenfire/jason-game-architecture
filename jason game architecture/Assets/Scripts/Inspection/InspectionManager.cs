@@ -8,7 +8,7 @@ public class InspectionManager : MonoBehaviour
     static Inspectable currentInspectable;
 
     public static float InspectionProgress => currentInspectable?.InspectionProgress ?? 0f;
-    public static bool Inspecting => currentInspectable != null; 
+    public static bool Inspecting => currentInspectable != null && currentInspectable.isActiveAndEnabled; 
 
     void Update()
     {
@@ -19,6 +19,10 @@ public class InspectionManager : MonoBehaviour
         if(Input.GetKey(KeyCode.E) && currentInspectable != null) 
         {
             currentInspectable.Inspect();
+        }
+        else
+        {
+            currentInspectable = null;
         }
     }
 }
