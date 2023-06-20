@@ -10,15 +10,25 @@ public class Inspectable : MonoBehaviour
 
     static HashSet<Inspectable> inspectablesInRange = new HashSet<Inspectable>();
     
-    float timeInspected;
     [SerializeField] float timeToInspect = 3f;
     [SerializeField] UnityEvent OnInspectionCompleted;
 
+    InspectableData data;
+
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => inspectablesInRange;
 
-    public float InspectionProgress => timeInspected / timeToInspect;
+    public float InspectionProgress => data.TimeInspected / timeToInspect;
 
-    public bool WasFullyInspected { get; private set; }
+    public bool WasFullyInspected => InspectionProgress >= 1;
+    
+    public void Bind(InspectableData inspectableData)
+    {
+        data = inspectableData;
+        if(data.TimeInspected> timeToInspect) 
+        {
+            CompleteInspection();
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -42,8 +52,8 @@ public class Inspectable : MonoBehaviour
 
     public void Inspect()
     {
-        timeInspected += Time.deltaTime;
-        if(timeInspected >= timeToInspect) 
+        data.TimeInspected += Time.deltaTime;
+        if(data.TimeInspected >= timeToInspect) 
         {
             CompleteInspection();
         }
@@ -51,7 +61,6 @@ public class Inspectable : MonoBehaviour
 
     void CompleteInspection()
     {
-        WasFullyInspected = true;
         inspectablesInRange.Remove(this);
         InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
         OnInspectionCompleted?.Invoke();
