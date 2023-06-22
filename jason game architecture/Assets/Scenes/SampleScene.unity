@@ -4010,6 +4010,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  required: {fileID: 0}
 --- !u!1 &301452935
 GameObject:
   m_ObjectHideFlags: 0
@@ -7874,7 +7875,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10168
+  m_Name: pb_Mesh25222
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12620,6 +12621,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  required: {fileID: 1051356742}
 --- !u!1 &975017227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14166,6 +14168,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  required: {fileID: 1680781926}
 --- !u!65 &1051356743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19154,6 +19157,7 @@ MonoBehaviour:
   OnInspectionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  required: {fileID: 0}
 --- !u!1 &1583704742
 GameObject:
   m_ObjectHideFlags: 0
@@ -23046,6 +23050,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  required: {fileID: 0}
 --- !u!65 &1680781927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23157,6 +23162,7 @@ MonoBehaviour:
   allFlags:
   - {fileID: 11400000, guid: f23c9eccfffe5da40bfcd4a35b13f594, type: 2}
   - {fileID: 11400000, guid: 72fe4607f36b49444a48fc6b7bc16f37, type: 2}
+  - {fileID: 11400000, guid: b7917f6d9e624b34c9066bf70a33b12a, type: 2}
   - {fileID: 11400000, guid: 5ef207fd52c083047a1b762aff6347cd, type: 2}
   - {fileID: 11400000, guid: 0f13a3c245a5b1c4d96a22cc32f122aa, type: 2}
   - {fileID: 11400000, guid: 0da5b7d47f5f3c344be051de426022c1, type: 2}
@@ -26290,9 +26296,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras:
-  - {fileID: 178993758}
-  - {fileID: 1516421193}
+  m_ChildCameras: []
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
@@ -26339,7 +26343,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-15732
+  m_Name: pb_Mesh25064
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
