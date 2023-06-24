@@ -4010,7 +4010,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  required: {fileID: 0}
 --- !u!1 &301452935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12621,7 +12620,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  required: {fileID: 1051356742}
 --- !u!1 &975017227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14120,6 +14118,7 @@ GameObject:
   - component: {fileID: 1051356743}
   - component: {fileID: 1051356742}
   - component: {fileID: 1051356741}
+  - component: {fileID: 1051356747}
   m_Layer: 0
   m_Name: Inspectable Box - Blue
   m_TagString: Untagged
@@ -14168,7 +14167,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  required: {fileID: 1680781926}
 --- !u!65 &1051356743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14248,6 +14246,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051356747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051356740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf27bdc26c4c3d428989c4391b68c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredInspectable: {fileID: 966667601}
 --- !u!43 &1076708084
 Mesh:
   m_ObjectHideFlags: 0
@@ -19157,7 +19168,6 @@ MonoBehaviour:
   OnInspectionCompleted:
     m_PersistentCalls:
       m_Calls: []
-  required: {fileID: 0}
 --- !u!1 &1583704742
 GameObject:
   m_ObjectHideFlags: 0
@@ -23050,7 +23060,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  required: {fileID: 0}
 --- !u!65 &1680781927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26296,7 +26305,9 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 178993758}
+  - {fileID: 1516421193}
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
