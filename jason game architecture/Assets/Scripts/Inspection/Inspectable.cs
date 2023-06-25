@@ -14,7 +14,7 @@ public class Inspectable : MonoBehaviour
     [SerializeField] UnityEvent OnInspectionCompleted;
     
     InspectableData data;
-    MetInspectedConditions[] allConditions;
+    IMet[] allConditions;
 
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => inspectablesInRange;
 
@@ -38,7 +38,7 @@ public class Inspectable : MonoBehaviour
 
     void Awake()
     {
-        allConditions = GetComponents<MetInspectedConditions>();    
+        allConditions = GetComponents<IMet>();    
     }
 
     public void Bind(InspectableData inspectableData)

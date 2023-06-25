@@ -5455,7 +5455,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25396
+  m_Name: pb_Mesh25474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12620,6 +12620,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 10fe344f33ff1444ea8a109dd385bb93, type: 2}
+        m_TargetAssemblyTypeName: GameFlag`1[[System.Boolean, mscorlib
+        m_MethodName: Set
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &975017227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14117,8 +14129,8 @@ GameObject:
   - component: {fileID: 1051356744}
   - component: {fileID: 1051356743}
   - component: {fileID: 1051356742}
-  - component: {fileID: 1051356741}
   - component: {fileID: 1051356747}
+  - component: {fileID: 1051356741}
   m_Layer: 0
   m_Name: Inspectable Box - Blue
   m_TagString: Untagged
@@ -14255,10 +14267,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1051356740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf27bdc26c4c3d428989c4391b68c1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0138b238e2277ef46b06ad6251d0d5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredInspectable: {fileID: 966667601}
+  requiredFlag: {fileID: 11400000, guid: 10fe344f33ff1444ea8a109dd385bb93, type: 2}
 --- !u!43 &1076708084
 Mesh:
   m_ObjectHideFlags: 0
@@ -23174,6 +23186,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7917f6d9e624b34c9066bf70a33b12a, type: 2}
   - {fileID: 11400000, guid: 5ef207fd52c083047a1b762aff6347cd, type: 2}
   - {fileID: 11400000, guid: 0f13a3c245a5b1c4d96a22cc32f122aa, type: 2}
+  - {fileID: 11400000, guid: 10fe344f33ff1444ea8a109dd385bb93, type: 2}
   - {fileID: 11400000, guid: 0da5b7d47f5f3c344be051de426022c1, type: 2}
   - {fileID: 11400000, guid: 9882f26a7994a6746be94236f5e99fe8, type: 2}
 --- !u!4 &1685362101
@@ -26305,9 +26318,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras:
-  - {fileID: 178993758}
-  - {fileID: 1516421193}
+  m_ChildCameras: []
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
@@ -26354,7 +26365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25064
+  m_Name: pb_Mesh25068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -1,10 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-internal class MetInspectedConditions : MonoBehaviour
+internal class MetInspectedConditionsBase : MonoBehaviour, IMet
 {
     [SerializeField] Inspectable requiredInspectable;
-    internal bool Met()
+
+    public bool Met()
     {
         return requiredInspectable.WasFullyInspected;
     }
