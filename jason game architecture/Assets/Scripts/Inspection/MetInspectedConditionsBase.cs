@@ -8,4 +8,13 @@ internal class MetInspectedConditionsBase : MonoBehaviour, IMet
     {
         return requiredInspectable.WasFullyInspected;
     }
+
+    void OnDrawGizmos()
+    {
+        if (requiredInspectable != null)
+        {
+            Gizmos.color = Met() ? Color.green : Color.red;
+            Gizmos.DrawLine(transform.position, requiredInspectable.transform.position);
+        }
+    }
 }
