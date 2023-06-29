@@ -18,7 +18,7 @@ public class Inspectable : MonoBehaviour
 
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => inspectablesInRange;
 
-    public float InspectionProgress => data.TimeInspected / timeToInspect;
+    public float InspectionProgress => data?.TimeInspected ?? 0f / timeToInspect;
 
     public bool WasFullyInspected => InspectionProgress >= 1;
 
