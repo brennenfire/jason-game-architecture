@@ -44,7 +44,7 @@ public class Inspectable : MonoBehaviour
     public void Bind(InspectableData inspectableData)
     {
         data = inspectableData;
-        if(data.TimeInspected> timeToInspect) 
+        if(WasFullyInspected) 
         {
             CompleteInspection();
         }
@@ -78,7 +78,7 @@ public class Inspectable : MonoBehaviour
         }
 
         data.TimeInspected += Time.deltaTime;
-        if(data.TimeInspected >= timeToInspect) 
+        if(WasFullyInspected) 
         {
             CompleteInspection();
         }
