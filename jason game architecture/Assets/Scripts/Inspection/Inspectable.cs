@@ -7,10 +7,12 @@ using UnityEngine.Events;
 public class Inspectable : MonoBehaviour
 {
     public static event Action<bool> InspectablesInRangeChanged;
+    public static event Action<Inspectable, string> AnyInspectionComplete;
 
     static HashSet<Inspectable> inspectablesInRange = new HashSet<Inspectable>();
 
     [SerializeField] float timeToInspect = 3f;
+    [SerializeField, TextArea] string completedInspectionText;
     [SerializeField] UnityEvent OnInspectionCompleted;
     
     InspectableData data;
@@ -89,5 +91,6 @@ public class Inspectable : MonoBehaviour
         inspectablesInRange.Remove(this);
         InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
         OnInspectionCompleted?.Invoke();
+        AnyInspectionComplete?.Invoke(this, completedInspectionText);
     }
 }
