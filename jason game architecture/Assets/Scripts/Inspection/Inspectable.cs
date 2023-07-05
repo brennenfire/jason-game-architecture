@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -48,7 +49,7 @@ public class Inspectable : MonoBehaviour
         data = inspectableData;
         if(WasFullyInspected) 
         {
-            CompleteInspection();
+            RestoreInspectionText();
         }
     }
 
@@ -92,5 +93,12 @@ public class Inspectable : MonoBehaviour
         InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
         OnInspectionCompleted?.Invoke();
         AnyInspectionComplete?.Invoke(this, completedInspectionText);
+    }
+
+    void RestoreInspectionText()
+    {
+        inspectablesInRange.Remove(this);
+        InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
+        OnInspectionCompleted?.Invoke();
     }
 }

@@ -17,16 +17,16 @@ public class InspectionPanel : MonoBehaviour
         hintText.enabled = false;
         completedInspectionText.enabled = false;
         Inspectable.InspectablesInRangeChanged += UpdateHintTextState;
-        Inspectable.AnyInspectionComplete += HandleAnyInspectionComplete;
+        Inspectable.AnyInspectionComplete += ShowCompletedInspectionText;
     }
 
     void OnDisable()
     {
         Inspectable.InspectablesInRangeChanged -= UpdateHintTextState;
-        Inspectable.AnyInspectionComplete -= HandleAnyInspectionComplete;
+        Inspectable.AnyInspectionComplete -= ShowCompletedInspectionText;
     }
 
-    void HandleAnyInspectionComplete(Inspectable inspectable, string completedInspectionMessage)
+    void ShowCompletedInspectionText(Inspectable inspectable, string completedInspectionMessage)
     {
         completedInspectionText.SetText(completedInspectionMessage);
         completedInspectionText.enabled = true;
