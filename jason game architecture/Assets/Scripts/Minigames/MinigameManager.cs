@@ -31,7 +31,7 @@ public class MinigameManager : MonoBehaviour
 
     public void StartMinigame(Action completeInspection)
     {
-        completeInspectionLocal = completeInspection;
+        WinLoseMinigamePanel.Instance.StartMinigame(completeInspection);
     }
 
 }
