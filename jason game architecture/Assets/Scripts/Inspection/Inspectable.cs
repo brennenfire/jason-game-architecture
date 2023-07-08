@@ -87,12 +87,24 @@ public class Inspectable : MonoBehaviour
         {
             if (requireMinigame)
             {
-                MinigameManager.Instance.StartMinigame(CompleteInspection);
+                MinigameManager.Instance.StartMinigame(HandleMinigameCompleted);
             }
             else
             {
                 CompleteInspection();
             }
+        }
+    }
+
+    void HandleMinigameCompleted(MinigameResult result)
+    {
+        if(result == MinigameResult.Won)
+        {
+            CompleteInspection();
+        }
+        else if(result == MinigameResult.Lost) 
+        {
+            data.TimeInspected = 0f;
         }
     }
 
