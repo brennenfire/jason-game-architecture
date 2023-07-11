@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FlippyBoxMovingBlock : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
     [SerializeField] float moveSpeed;
+    new Rigidbody2D rigidbody;
 
     void Awake()
     {

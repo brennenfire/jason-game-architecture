@@ -15,11 +15,6 @@ public class MinigameManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Y)) 
@@ -31,7 +26,7 @@ public class MinigameManager : MonoBehaviour
 
     public void StartMinigame(Action<MinigameResult> completeInspection)
     {
-        WinLoseMinigamePanel.Instance.StartMinigame(completeInspection);
+        FlippyBoxMinigamePanel.Instance.StartMinigame(completeInspection);
     }
 
 }

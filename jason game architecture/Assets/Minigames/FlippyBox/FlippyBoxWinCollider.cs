@@ -8,7 +8,7 @@ public class FlippyBoxWinCollider : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Won");
+            FindObjectOfType<FlippyBoxMinigamePanel>().Win();
         }
     }
 }

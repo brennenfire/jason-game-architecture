@@ -6,7 +6,7 @@ public class FlippyBoxLoseCollider : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Lost");
+            FindObjectOfType<FlippyBoxMinigamePanel>().Lose();
         }
     }
 }

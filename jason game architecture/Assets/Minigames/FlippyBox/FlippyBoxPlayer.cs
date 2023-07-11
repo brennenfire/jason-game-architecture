@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlippyBoxPlayer : MonoBehaviour
 {
     [SerializeField] Vector2 jumpVelocity;
-    Rigidbody2D rigidbody;
+    new Rigidbody2D rigidbody;
 
     void Awake()
     {
