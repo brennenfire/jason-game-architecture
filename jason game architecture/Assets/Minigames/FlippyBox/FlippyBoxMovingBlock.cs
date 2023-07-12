@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlippyBoxMovingBlock : MonoBehaviour
+public class FlippyBoxMovingBlock : MonoBehaviour, IRestart
 {
     [SerializeField] float moveSpeed;
     new Rigidbody2D rigidbody;
+    Vector3 startingPosition;
 
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();    
+        startingPosition = transform.position;
     }
 
     void FixedUpdate()
@@ -21,5 +23,10 @@ public class FlippyBoxMovingBlock : MonoBehaviour
         {
             rigidbody.position += new Vector2(30f, 0f);
         }
+    }
+
+    public void Restart()
+    {
+        transform.position = startingPosition;
     }
 }
