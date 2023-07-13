@@ -87,6 +87,8 @@ public class Inspectable : MonoBehaviour
         {
             if (requireMinigame)
             {
+                inspectablesInRange.Remove(this);
+                InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
                 MinigameManager.Instance.StartMinigame(HandleMinigameCompleted);
             }
             else
@@ -104,6 +106,8 @@ public class Inspectable : MonoBehaviour
         }
         else if(result == MinigameResult.Lost) 
         {
+            inspectablesInRange.Add(this);
+            InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
             data.TimeInspected = 0f;
         }
     }
