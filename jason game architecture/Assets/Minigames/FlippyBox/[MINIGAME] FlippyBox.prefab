@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8830664ffd44bd46a68b5dc70777deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: {x: 2, y: 5}
+  spinSpeed: 50
 --- !u!1 &4095826474400523070
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d209606a4dee39742b33c39d620739ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSettings: {fileID: 11400000, guid: 643995c19893c1446864470e0ac15fb8, type: 2}
 --- !u!1 &5548380611257108644
 GameObject:
   m_ObjectHideFlags: 0

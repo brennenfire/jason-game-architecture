@@ -16,10 +16,11 @@ public class Inspectable : MonoBehaviour
     [SerializeField, TextArea] string completedInspectionText;
     [SerializeField] UnityEvent OnInspectionCompleted;
     [SerializeField] bool requireMinigame = false;
-    
+    [SerializeField] FlippyBoxSettings minigameSettings;
+
     InspectableData data;
     IMet[] allConditions;
-
+    
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => inspectablesInRange;
 
     public float InspectionProgress => data?.TimeInspected ?? 0f / timeToInspect;
@@ -89,7 +90,7 @@ public class Inspectable : MonoBehaviour
             {
                 inspectablesInRange.Remove(this);
                 InspectablesInRangeChanged?.Invoke(inspectablesInRange.Any());
-                MinigameManager.Instance.StartMinigame(HandleMinigameCompleted);
+                MinigameManager.Instance.StartMinigame(minigameSettings ,HandleMinigameCompleted);
             }
             else
             {

@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class FlippyBoxPlayer : MonoBehaviour, IRestart
 {
-    [SerializeField] Vector2 jumpVelocity;
-    [SerializeField] float growTime = 10f;
+    [SerializeField] float spinSpeed = 50f;
+
+    Vector2 JumpVelocity => FlippyBoxMinigamePanel.Instance.CurrentSettings.JumpVelocity;
+    float GrowTime => FlippyBoxMinigamePanel.Instance.CurrentSettings.GrowTime;
 
     new Rigidbody2D rigidbody;
     Vector3 startingPosition;
     Quaternion startingRotation;
     float elapsed;
-    float spinSpeed = 50f;
 
     void Awake()
     {
@@ -26,13 +27,13 @@ public class FlippyBoxPlayer : MonoBehaviour, IRestart
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            rigidbody.velocity = jumpVelocity;
+            rigidbody.velocity = JumpVelocity;
         }
 
         transform.Rotate(0f, 0f, Time.deltaTime * spinSpeed);
 
         elapsed += Time.deltaTime;
-        float size = Mathf.Lerp(1f, 2f, elapsed / growTime);
+        float size = Mathf.Lerp(1f, 2f, elapsed / GrowTime);
         transform.localScale = new Vector3(size, size, size);
     }
 
@@ -42,5 +43,6 @@ public class FlippyBoxPlayer : MonoBehaviour, IRestart
         transform.rotation = startingRotation;
         elapsed = 0f;
         transform.localScale = Vector3.one;
+        GetComponent<SpriteRenderer>().color = FlippyBoxMinigamePanel.Instance.CurrentSettings.PlayerColor;
     }
 }

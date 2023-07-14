@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 448026451, guid: c698a31d507fc1e499ef88791adc7aa0, type: 3}
+      propertyPath: defaultSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 643995c19893c1446864470e0ac15fb8, type: 2}
     - target: {fileID: 4095826474400523070, guid: c698a31d507fc1e499ef88791adc7aa0, type: 3}
       propertyPath: m_Name
       value: '[MINIGAME] FlippyBox'

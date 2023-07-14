@@ -24,9 +24,13 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
-    public void StartMinigame(Action<MinigameResult> completeInspection)
+    public void StartMinigame(FlippyBoxSettings settings, Action<MinigameResult> completeInspection)
     {
-        FlippyBoxMinigamePanel.Instance.StartMinigame(completeInspection);
+        FlippyBoxMinigamePanel.Instance.StartMinigame(settings, completeInspection);
     }
 
+    internal void StartMinigame(object minigameSettings, Action<MinigameResult> handleMinigameCompleted)
+    {
+        throw new NotImplementedException();
+    }
 }

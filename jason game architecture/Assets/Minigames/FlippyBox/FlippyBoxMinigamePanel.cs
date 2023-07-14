@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class FlippyBoxMinigamePanel : MonoBehaviour
 {
+    [SerializeField] FlippyBoxSettings defaultSettings;
+
     Action<MinigameResult> completeInspectionLocal;
 
+    public FlippyBoxSettings CurrentSettings { get; private set; }
     public static FlippyBoxMinigamePanel Instance { get; private set; }
 
     void Awake()
@@ -17,10 +20,15 @@ public class FlippyBoxMinigamePanel : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        if(transform.parent == null) 
+        {
+            StartMinigame(defaultSettings, (result) => Debug.Log(result));
+        }
     }
 
-    public void StartMinigame(Action<MinigameResult> completeInspection)
+    public void StartMinigame(FlippyBoxSettings settings , Action<MinigameResult> completeInspection)
     {
+        CurrentSettings = settings ?? defaultSettings;
         completeInspectionLocal = completeInspection;
         foreach(var restartable in GetComponentsInChildren<IRestart>()) 
         {
