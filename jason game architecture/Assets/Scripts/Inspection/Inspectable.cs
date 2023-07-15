@@ -16,7 +16,7 @@ public class Inspectable : MonoBehaviour
     [SerializeField, TextArea] string completedInspectionText;
     [SerializeField] UnityEvent OnInspectionCompleted;
     [SerializeField] bool requireMinigame = false;
-    [SerializeField] FlippyBoxSettings minigameSettings;
+    [SerializeField] MinigameSettings minigameSettings;
 
     InspectableData data;
     IMet[] allConditions;
