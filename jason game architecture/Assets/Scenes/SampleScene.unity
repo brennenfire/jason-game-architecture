@@ -14440,7 +14440,7 @@ Transform:
   m_Children:
   - {fileID: 797333096}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1051356747
 MonoBehaviour:
@@ -18049,7 +18049,7 @@ GameObject:
   - component: {fileID: 1341069256}
   - component: {fileID: 1341069255}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: '[INVENTORY]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18067,9 +18067,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35414b0ac8e51814b94f676945fa660b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 11400000, guid: 6b2d137f957736c46b484b4c66afb87c, type: 2}
-  - {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
+  GeneralInventory:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
   debugItem: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
 --- !u!4 &1341069256
 Transform:
@@ -18084,7 +18091,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1351411842
 GameObject:
@@ -18315,7 +18322,7 @@ Transform:
   m_Children:
   - {fileID: 830022385}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413733937
 GameObject:
@@ -24380,7 +24387,7 @@ Transform:
   m_Children:
   - {fileID: 880669753}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1685362099
 GameObject:
