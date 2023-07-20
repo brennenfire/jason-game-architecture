@@ -31,4 +31,17 @@ public class Inventory : MonoBehaviour
     {
         AddItem(debugItem);
     }
+
+    [ContextMenu(nameof(MoveItemsRight))]
+    void MoveItemsRight()
+    {
+        var lastItemSlot = GeneralInventory.Last().Item;
+        for (int i = GENERAL_SIZE - 1; i > 0; i--)
+        {
+            GeneralInventory[i].SetItem(GeneralInventory[i - 1].Item);
+        }
+
+        GeneralInventory.First().SetItem(lastItemSlot);
+    }
+    
 }
