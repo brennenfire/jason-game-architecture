@@ -7,15 +7,15 @@ public class GamePersistence : MonoBehaviour
 
     void Start()
     {
-        LoadGameFlags();
+        LoadGame();
     }
 
     void OnDisable()
     {
-        SaveGameFlags();    
+        SaveGame();  
     }
 
-    void SaveGameFlags()
+    void SaveGame()
     {
         Debug.Log("Saving Game Data");
         var json = JsonUtility.ToJson(gameData);
@@ -24,7 +24,7 @@ public class GamePersistence : MonoBehaviour
         Debug.Log("Saving Game Data Complete");
     }
 
-    void LoadGameFlags()
+    void LoadGame()
     {
         var json = PlayerPrefs.GetString("GameData");
         gameData = JsonUtility.FromJson<GameData>(json);
@@ -34,5 +34,6 @@ public class GamePersistence : MonoBehaviour
         }
         FlagManager.Instance.Bind(gameData.GameFlagDatas);
         InspectionManager.Bind(gameData.InspectableDatas);
+        Inventory.Instance.Bind(gameData.SlotDatas);
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GreenButton
   m_EditorClassIdentifier: 
   Icon: {fileID: 127079573, guid: 831ac519a26c0604e93de9650a1ca24a, type: 3}
-  Name: 
+  Name: green
   Description: 
