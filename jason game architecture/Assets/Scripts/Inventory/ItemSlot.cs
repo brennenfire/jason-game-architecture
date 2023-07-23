@@ -19,8 +19,8 @@ public class ItemSlot
     public void Bind(SlotData slotData)
     {
         slotDataLocal = slotData;
-        UnityEngine.Debug.LogError($"Attempted to load item {slotDataLocal.ItemName}");
-        //SetItem();
+        var item = Resources.Load<Item>("Items/" + slotDataLocal.ItemName);
+        SetItem(item);
     }
 }
 
