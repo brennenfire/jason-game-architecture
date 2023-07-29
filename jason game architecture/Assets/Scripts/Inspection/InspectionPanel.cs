@@ -30,7 +30,7 @@ public class InspectionPanel : MonoBehaviour
     {
         completedInspectionText.SetText(completedInspectionMessage);
         completedInspectionText.enabled = true;
-        float messageTime = completedInspectionMessage.Length / 5;
+        float messageTime = completedInspectionMessage.Length / 3;
         messageTime = Mathf.Clamp(messageTime, 3f, 15f);
         StartCoroutine(FadeCompletedText(messageTime));
     }
@@ -41,7 +41,7 @@ public class InspectionPanel : MonoBehaviour
         while (completedInspectionText.alpha > 0f)
         {
             yield return null;
-            completedInspectionText.alpha -= Time.deltaTime;
+            completedInspectionText.alpha -= Time.deltaTime / messageTime;
         }
 
         completedInspectionText.enabled = false;

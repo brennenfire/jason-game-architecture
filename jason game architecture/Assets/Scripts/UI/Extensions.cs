@@ -2,6 +2,7 @@
 
 public static class Extensions
 {
+    #if UNITY_EDITOR
     public static T[] GetAllInstances<T>() where T : UnityEngine.Object
     {
         string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);  //FindAssets uses tags check documentation for more info
@@ -15,4 +16,5 @@ public static class Extensions
         return a;
 
     }
+    #endif
 }

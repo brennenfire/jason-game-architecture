@@ -22,13 +22,14 @@ public class FlagManager : MonoBehaviour
                                             v => v);    
     }
 
+    #if UNITY_EDITOR
     void OnValidate()
     {
         //flagTest = FindObjectsOfType<GameFlag>();
         allFlags = Extensions.GetAllInstances<GameFlag>();
     }
+    #endif
 
-    
 
     public void Set(string flagName, string value)
     {
