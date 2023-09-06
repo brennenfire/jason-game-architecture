@@ -10510,6 +10510,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1995404974991532254, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992490460151334478, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (1)

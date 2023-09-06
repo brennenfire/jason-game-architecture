@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class InventoryPanel : MonoBehaviour
 {
-    void Start()
+    IEnumerator Start()
     {
+        yield return null;
         Bind(Inventory.Instance);    
     }
 
