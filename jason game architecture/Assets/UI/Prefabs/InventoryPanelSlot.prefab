@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3260211475471565013}
   - component: {fileID: 3260211475471565012}
   - component: {fileID: 1886228202428709789}
+  - component: {fileID: 1482389359065534681}
   m_Layer: 5
   m_Name: InventoryPanelSlot
   m_TagString: Untagged
@@ -167,3 +168,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIconLocal: {fileID: 2992490460151334478}
+  outline: {fileID: 1482389359065534681}
+--- !u!114 &1482389359065534681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260211475471565010}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
