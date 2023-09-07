@@ -6,7 +6,6 @@ public class InventoryPanelSlot : MonoBehaviour
 {
     ItemSlot itemSlotLocal;
     [SerializeField] Image itemIconLocal;
-
     
 
     public void Bind(ItemSlot itemSlot)
@@ -16,7 +15,7 @@ public class InventoryPanelSlot : MonoBehaviour
         UpdateIcon();
     }
 
-    private void UpdateIcon()
+    void UpdateIcon()
     {
         if (itemSlotLocal.Item != null)
         {

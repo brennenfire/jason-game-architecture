@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        var firstAvailableSlot = GeneralSlots.FirstOrDefault(t => t.isEmpty);
+        var firstAvailableSlot = GeneralSlots.FirstOrDefault(t => t.IsEmpty);
         firstAvailableSlot.SetItem(item);
     }
 

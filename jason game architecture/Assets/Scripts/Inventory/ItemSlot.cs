@@ -10,11 +10,11 @@ public class ItemSlot
     public Item Item;
     SlotData slotDataLocal;
 
-    public bool isEmpty => Item == null;
+    public bool IsEmpty => Item == null;
 
     public void SetItem(Item item)
     {
-        var previousItem = item;
+        var previousItem = Item;
         Item = item;
         slotDataLocal.ItemName = item?.name ?? string.Empty;
         
