@@ -4770,6 +4770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (7)
@@ -10510,6 +10514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 1995404974991532254, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14343,6 +14351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (3)
@@ -14787,7 +14799,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1955435752}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -15888,6 +15900,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (2)
@@ -18651,6 +18667,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (5)
@@ -19216,6 +19236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (6)
@@ -19446,6 +19470,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1416862547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416862548}
+  - component: {fileID: 1416862550}
+  - component: {fileID: 1416862549}
+  m_Layer: 5
+  m_Name: DraggingItemIconImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1416862548
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416862547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1955435752}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100.00006, y: 29.64392}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1416862549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416862547}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1416862550
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416862547}
+  m_CullTransparentMesh: 1
 --- !u!1 &1427123248
 GameObject:
   m_ObjectHideFlags: 0
@@ -21771,6 +21871,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (4)
@@ -26910,6 +27014,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot (8)
@@ -28840,6 +28948,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 141511636}
+  - {fileID: 1416862548}
   - {fileID: 1035455683}
   m_Father: {fileID: 1222515435}
   m_RootOrder: 0
@@ -30384,6 +30493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 141511636}
     m_Modifications:
+    - target: {fileID: 1886228202428709789, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
+      propertyPath: draggedItemIcon
+      value: 
+      objectReference: {fileID: 1416862549}
     - target: {fileID: 3260211475471565010, guid: 73f42359923db964cb7ae224d6e34bdf, type: 3}
       propertyPath: m_Name
       value: InventoryPanelSlot

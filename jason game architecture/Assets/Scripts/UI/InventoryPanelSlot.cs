@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryPanelSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventoryPanelSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     ItemSlot itemSlotLocal;
+    [SerializeField] Image draggedItemIcon;
     [SerializeField] Image itemIconLocal;
     [SerializeField] Outline outline;
+    [SerializeField] Color draggingColor = Color.gray;
 
     public void Bind(ItemSlot itemSlot)
     {
@@ -39,5 +41,29 @@ public class InventoryPanelSlot : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerExit(PointerEventData eventData)
     {
         outline.enabled = false;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if(itemSlotLocal.IsEmpty)
+        {
+            return;
+        }
+
+        itemIconLocal.color = draggingColor;
+        draggedItemIcon.sprite = itemIconLocal.sprite;
+        draggedItemIcon.enabled = true;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        itemIconLocal.color = Color.white;
+        draggedItemIcon.sprite = null;
+        draggedItemIcon.enabled = false;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        draggedItemIcon.transform.position = eventData.position;
     }
 }
