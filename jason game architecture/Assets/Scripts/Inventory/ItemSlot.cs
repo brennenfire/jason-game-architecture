@@ -30,6 +30,13 @@ public class ItemSlot
         var item = Resources.Load<Item>("Items/" + slotDataLocal.ItemName);
         SetItem(item);
     }
+
+    public void Swap(ItemSlot slotToSwap)
+    {
+        var itemOtherSlot = slotToSwap.Item;
+        slotToSwap.SetItem(Item);
+        SetItem(itemOtherSlot);
+    }
 }
 
 
