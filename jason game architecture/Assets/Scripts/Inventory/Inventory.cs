@@ -81,4 +81,12 @@ public class Inventory : MonoBehaviour
             slot.Bind(slotData);
         }
     }
+
+    public void ClearCraftingSlots()
+    {
+        foreach (var slot in CraftingSlots)
+        {
+            slot.RemoveItem();
+        }
+    }
 }

@@ -10,28 +10,37 @@ public class CraftingManager : MonoBehaviour
 
     public void TryCrafting()
     {
-        int itemsInCraftingInventory = Inventory.Instance.CraftingSlots
-                                                .Count(t => t.IsEmpty == false);
-        Debug.Log($"Trying to craft with {itemsInCraftingInventory} items");
-
         foreach (var recipe in recipes)
         {
             if(IsMatchingRecipe(recipe, Inventory.Instance.CraftingSlots))
             {
-                Debug.Log($"Found the recipe {recipe.name}");
-                //CraftRecipe
+                Inventory.Instance.ClearCraftingSlots();
+
+                foreach (var reward in recipe.Rewards)
+                {
+                    Inventory.Instance.AddItem(reward);
+                }
+                Debug.Log($"Crafted the recipe {recipe.name}");
                 return;
             }
         }
     }
 
-    bool IsMatchingRecipe(Recipe recipe, ItemSlot[] instanceCraftingSlots)
+    bool IsMatchingRecipe(Recipe recipe, ItemSlot[] craftingSlots)
     {
         for (int i = 0; i < recipe.Ingredients.Count; i++)
         {
-            if (recipe.Ingredients[i] != instanceCraftingSlots[i].Item)
+            if (recipe.Ingredients[i] != craftingSlots[i].Item)
             {
                 return false;   
+            }
+        }
+
+        for (int i = recipe.Ingredients.Count; i < craftingSlots.Length; i++)
+        {
+            if (craftingSlots[i].IsEmpty == false)
+            {
+                return false;
             }
         }
 
