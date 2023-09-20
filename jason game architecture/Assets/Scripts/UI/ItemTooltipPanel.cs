@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemTooltipPanel : MonoBehaviour
+public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
 {
     public static ItemTooltipPanel Instance { get; private set; }
 
@@ -41,5 +42,10 @@ public class ItemTooltipPanel : MonoBehaviour
         canvasGroup.alpha = visible ? 1f : 0f;
         canvasGroup.interactable = visible;
         canvasGroup.blocksRaycasts = visible;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Toggle(false);
     }
 }
