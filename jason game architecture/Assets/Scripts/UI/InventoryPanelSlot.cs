@@ -70,7 +70,12 @@ public class InventoryPanelSlot : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(itemSlotLocal.IsEmpty == false && Focused != null)
+        if (Focused == null && Input.GetKey(KeyCode.LeftShift))
+        {
+            itemSlotLocal.RemoveItem();
+        }
+
+        if (itemSlotLocal.IsEmpty == false && Focused != null)
         {
             itemSlotLocal.Swap(Focused.itemSlotLocal);
         }
@@ -83,6 +88,7 @@ public class InventoryPanelSlot : MonoBehaviour,
     public void OnDrag(PointerEventData eventData)
     {
         draggedItemIcon.transform.position = eventData.position;
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)
