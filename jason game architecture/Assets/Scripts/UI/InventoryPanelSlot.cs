@@ -88,11 +88,17 @@ public class InventoryPanelSlot : MonoBehaviour,
     public void OnDrag(PointerEventData eventData)
     {
         draggedItemIcon.transform.position = eventData.position;
-        
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ItemTooltipPanel.Instance.ShowItem(itemSlotLocal.Item);
+        if (Input.GetKey(KeyCode.Tab) && itemSlotLocal.IsEmpty == false)
+        {
+            Inventory.Instance.AddItem(itemSlotLocal.Item);
+        }
+        else
+        {
+            ItemTooltipPanel.Instance.ShowItem(itemSlotLocal.Item);
+        }
     }
 }
