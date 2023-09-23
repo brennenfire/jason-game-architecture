@@ -18,7 +18,7 @@ public class CraftingManager : MonoBehaviour
 
                 foreach (var reward in recipe.Rewards)
                 {
-                    Inventory.Instance.AddItem(reward);
+                    Inventory.Instance.AddItem(reward, InventoryType.Crafting);
                 }
                 Debug.Log($"Crafted the recipe {recipe.name}");
                 return;

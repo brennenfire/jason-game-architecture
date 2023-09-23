@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,10 +30,25 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, InventoryType preferredInventoryType = InventoryType.General)
     {
-        var firstAvailableSlot = GeneralSlots.FirstOrDefault(t => t.IsEmpty);
-        firstAvailableSlot.SetItem(item);
+        var preferredSlots = preferredInventoryType == InventoryType.General ? GeneralSlots : CraftingSlots;
+        var backupSlots = preferredInventoryType == InventoryType.General ? CraftingSlots : GeneralSlots;
+
+
+        var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
+        if(firstAvailableSlot == null)
+        {
+            firstAvailableSlot = backupSlots.FirstOrDefault(tag => tag.IsEmpty);   
+        }
+        if (firstAvailableSlot != null)
+        {
+            firstAvailableSlot.SetItem(item);
+        }
+        else
+        {
+            Debug.LogError($"unable to add {item}");
+        }
     }
 
     [ContextMenu(nameof(AddDebugItem))]
@@ -89,4 +105,10 @@ public class Inventory : MonoBehaviour
             slot.RemoveItem();
         }
     }
+}
+
+public enum InventoryType
+{
+    General,
+    Crafting
 }
