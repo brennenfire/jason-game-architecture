@@ -101,4 +101,9 @@ public class InventoryPanelSlot : MonoBehaviour,
             ItemTooltipPanel.Instance.ShowItem(itemSlotLocal.Item);
         }
     }
+
+    internal void Bind(object topOverflowSlot)
+    {
+        throw new NotImplementedException();
+    }
 }
