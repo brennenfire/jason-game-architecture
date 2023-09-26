@@ -40,13 +40,27 @@ public class Inventory : MonoBehaviour
         var backupSlots = preferredInventoryType == InventoryType.General ? CraftingSlots : GeneralSlots;
 
 
-        var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
-        if(firstAvailableSlot == null)
+        if (AddItemToSlots(item, preferredSlots))
         {
-            firstAvailableSlot = backupSlots.FirstOrDefault(tag => tag.IsEmpty);   
+            return;
         }
 
+        if (AddItemToSlots(item, backupSlots))
+        {
+            return;
+        }
 
+        if (AddItemToSlots(item, OverflowSlots))
+        {
+            CreateOverflowSlot();
+        }
+
+        else
+        {
+            Debug.LogError($"unable to add {item}");
+        }
+
+        /*
         if (firstAvailableSlot == null)
         {
             firstAvailableSlot = OverflowSlots.Last();
@@ -61,6 +75,19 @@ public class Inventory : MonoBehaviour
         {
             Debug.LogError($"unable to add {item}");
         }
+        */
+    }
+
+    bool AddItemToSlots(Item item, IEnumerable<ItemSlot> slots)
+    {
+        var slot = slots.FirstOrDefault(t => t.IsEmpty);
+        if (slot != null)
+        {
+            slot.SetItem(item);
+            return true;
+        }
+
+        return false;
     }
 
     [ContextMenu(nameof(AddDebugItem))]
