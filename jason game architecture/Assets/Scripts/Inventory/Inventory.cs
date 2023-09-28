@@ -156,6 +156,47 @@ public class Inventory : MonoBehaviour
             slot.RemoveItem();
         }
     }
+
+    public void RemoveItemFromSlot(ItemSlot itemSlot)
+    {
+        itemSlot.RemoveItem();
+        if(itemSlot == TopOverflowSlot)
+        {
+            MoveOverflowItemsUp();
+        }    
+    }
+
+    private void MoveOverflowItemsUp()
+    {
+        for (int i = 0; i < OverflowSlots.Count - 1; i++)
+        {
+            var item = OverflowSlots[i + 1].Item;
+            OverflowSlots[i].SetItem(item);
+        }
+        OverflowSlots.Last().RemoveItem();
+    }
+
+    public void Swap(ItemSlot sourceSlot, ItemSlot focusedSlot)
+    {
+        if (focusedSlot == TopOverflowSlot)
+        {
+            Debug.LogError("overflow slot cant :P");
+        }
+        else if (sourceSlot == TopOverflowSlot)
+        {
+            MoveItemFromOverflowSlot(focusedSlot);
+        }
+        else
+        {
+            sourceSlot.Swap(focusedSlot);
+        }
+    }
+
+    void MoveItemFromOverflowSlot(ItemSlot targetSlot)
+    {
+        targetSlot.SetItem(TopOverflowSlot.Item);
+        MoveOverflowItemsUp();
+    }
 }
 
 public enum InventoryType

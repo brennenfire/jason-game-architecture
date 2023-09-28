@@ -72,12 +72,12 @@ public class InventoryPanelSlot : MonoBehaviour,
     {
         if (Focused == null && Input.GetKey(KeyCode.LeftShift))
         {
-            itemSlotLocal.RemoveItem();
+            Inventory.Instance.RemoveItemFromSlot(itemSlotLocal);
         }
 
         if (itemSlotLocal.IsEmpty == false && Focused != null)
         {
-            itemSlotLocal.Swap(Focused.itemSlotLocal);
+            Inventory.Instance.Swap(itemSlotLocal, Focused.itemSlotLocal);       
         }
 
         itemIconLocal.color = Color.white;
