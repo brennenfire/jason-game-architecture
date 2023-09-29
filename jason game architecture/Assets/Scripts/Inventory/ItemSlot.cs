@@ -8,15 +8,18 @@ public class ItemSlot
     public event Action Changed;
 
     public Item Item;
-    SlotData slotDataLocal;
+    public SlotData slotDataLocal;
 
     public bool IsEmpty => Item == null;
+
+    public bool HasStackSpaceAvailable => slotDataLocal.StackCount < Item.MaxStackSize;
 
     public void SetItem(Item item)
     {
         var previousItem = Item;
         Item = item;
         slotDataLocal.ItemName = item?.name ?? string.Empty;
+        slotDataLocal.StackCount = 1;
         
         if (previousItem != item)
         {
@@ -42,6 +45,12 @@ public class ItemSlot
     {
         SetItem(null);
     }
+
+    internal void ModifyStack(int amount)
+    {
+        slotDataLocal.StackCount += amount;
+        Changed?.Invoke();
+    }
 }
 
 
@@ -50,4 +59,5 @@ public class SlotData
 {
     public string SlotName;
     public string ItemName;
+    public int StackCount;
 }

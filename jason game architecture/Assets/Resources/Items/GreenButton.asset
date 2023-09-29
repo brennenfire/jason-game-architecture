@@ -15,3 +15,4 @@ MonoBehaviour:
   Icon: {fileID: 127079573, guid: 831ac519a26c0604e93de9650a1ca24a, type: 3}
   Name: green
   Description: pee pee
+  MaxStackSize: 5
