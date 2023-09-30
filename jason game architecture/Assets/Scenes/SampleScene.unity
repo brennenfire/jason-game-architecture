@@ -21134,6 +21134,7 @@ MonoBehaviour:
   - Item: {fileID: 0}
   - Item: {fileID: 0}
   - Item: {fileID: 0}
+  OverflowSlots: []
   debugItem: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
 --- !u!4 &1341069256
 Transform:

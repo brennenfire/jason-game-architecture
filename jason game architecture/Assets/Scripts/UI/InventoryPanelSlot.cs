@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -19,25 +20,29 @@ public class InventoryPanelSlot : MonoBehaviour,
     [SerializeField] Image itemIconLocal;
     [SerializeField] Outline outline;
     [SerializeField] Color draggingColor = Color.gray;
+    [SerializeField] TMP_Text stackCountText;
      
     public void Bind(ItemSlot itemSlot)
     {
         itemSlotLocal = itemSlot;
-        itemSlotLocal.Changed += UpdateIcon;
-        UpdateIcon();
+        itemSlotLocal.Changed += UpdateIconAndStackSize;
+        UpdateIconAndStackSize();
     }
 
-    void UpdateIcon()
+    void UpdateIconAndStackSize()
     {
         if (itemSlotLocal.Item != null)
         {
             itemIconLocal.sprite = itemSlotLocal.Item.Icon;
             itemIconLocal.enabled = true;
+            stackCountText.SetText(itemSlotLocal.StackCount.ToString());
+            stackCountText.enabled = itemSlotLocal.Item.MaxStackSize > 1;
         }
         else
         {
             itemIconLocal.sprite = null;
             itemIconLocal.enabled = false;
+            stackCountText.enabled = false;
         }
     }
 

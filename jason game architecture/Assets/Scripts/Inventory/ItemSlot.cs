@@ -8,11 +8,13 @@ public class ItemSlot
     public event Action Changed;
 
     public Item Item;
-    public SlotData slotDataLocal;
+    SlotData slotDataLocal;
 
     public bool IsEmpty => Item == null;
 
     public bool HasStackSpaceAvailable => slotDataLocal.StackCount < Item.MaxStackSize;
+
+    public int StackCount => slotDataLocal.StackCount;
 
     public void SetItem(Item item)
     {
@@ -31,7 +33,8 @@ public class ItemSlot
     {
         slotDataLocal = slotData;
         var item = Resources.Load<Item>("Items/" + slotDataLocal.ItemName);
-        SetItem(item);
+        Item = item;
+        Changed?.Invoke();
     }
 
     public void Swap(ItemSlot slotToSwap)
