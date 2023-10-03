@@ -193,6 +193,24 @@ public class Inventory : MonoBehaviour
         {
             MoveItemFromOverflowSlot(focusedSlot);
         }
+        else if (focusedSlot != null &&
+                focusedSlot.IsEmpty &&
+                Input.GetKey(KeyCode.C) &&
+                sourceSlot.StackCount > 1)
+        {
+            focusedSlot.SetItem(sourceSlot.Item);
+            sourceSlot.ModifyStack(-1);
+        }
+        else if (focusedSlot != null && focusedSlot.Item == sourceSlot.Item && focusedSlot.HasStackSpaceAvailable)
+        {
+            int numberToMove = Mathf.Min(focusedSlot.AvailableStackSpace, sourceSlot.StackCount);
+            if(Input.GetKey(KeyCode.C) && numberToMove > 1) 
+            {
+                numberToMove = 1;
+            }
+            focusedSlot.ModifyStack(numberToMove);
+            sourceSlot.ModifyStack(-numberToMove);
+        }
         else
         {
             sourceSlot.Swap(focusedSlot);
