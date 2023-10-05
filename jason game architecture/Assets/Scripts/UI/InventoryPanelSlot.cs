@@ -77,7 +77,7 @@ public class InventoryPanelSlot : MonoBehaviour,
     {
         if (Focused == null && Input.GetKey(KeyCode.LeftShift))
         {
-            Inventory.Instance.RemoveItemFromSlot(itemSlotLocal);
+            itemSlotLocal.RemoveItem();
         }
 
         if (itemSlotLocal.IsEmpty == false && Focused != null)

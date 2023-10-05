@@ -119,6 +119,13 @@ public class Inventory : MonoBehaviour
     {
         localSlotDatas = slotDatas;
         CreateOverflowSlot();
+        TopOverflowSlot.Changed += () =>
+        {
+            if (TopOverflowSlot.IsEmpty && OverflowSlots.Any(t => t.IsEmpty == false))
+            {
+                MoveOverflowItemsUp();
+            }
+        };
 
         for (int i = 0; i < GeneralSlots.Length; i++)
         {
@@ -147,7 +154,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void CreateOverflowSlot()
+    void CreateOverflowSlot()
     {
         var overflowSlot = new ItemSlot();
         var overflowSlotData = new SlotData { SlotName = "Overflow" + OverflowSlots.Count };
@@ -164,16 +171,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveItemFromSlot(ItemSlot itemSlot)
-    {
-        itemSlot.RemoveItem();
-        if(itemSlot == TopOverflowSlot)
-        {
-            MoveOverflowItemsUp();
-        }    
-    }
-
-    private void MoveOverflowItemsUp()
+    void MoveOverflowItemsUp()
     {
         for (int i = 0; i < OverflowSlots.Count - 1; i++)
         {
@@ -188,10 +186,6 @@ public class Inventory : MonoBehaviour
         if (focusedSlot == TopOverflowSlot)
         {
             Debug.LogError("overflow slot cant :P");
-        }
-        else if (sourceSlot == TopOverflowSlot)
-        {
-            MoveItemFromOverflowSlot(focusedSlot);
         }
         else if (focusedSlot != null &&
                 focusedSlot.IsEmpty &&
@@ -215,12 +209,6 @@ public class Inventory : MonoBehaviour
         {
             sourceSlot.Swap(focusedSlot);
         }
-    }
-
-    void MoveItemFromOverflowSlot(ItemSlot targetSlot)
-    {
-        targetSlot.SetItem(TopOverflowSlot.Item);
-        MoveOverflowItemsUp();
     }
 }
 
