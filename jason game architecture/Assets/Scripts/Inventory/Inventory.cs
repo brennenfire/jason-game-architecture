@@ -52,7 +52,10 @@ public class Inventory : MonoBehaviour
 
         if (AddItemToSlots(item, OverflowSlots))
         {
-            CreateOverflowSlot();
+            if (OverflowSlots.Any(t => t.IsEmpty))
+            {
+                CreateOverflowSlot();
+            }
         }
 
         else
@@ -118,6 +121,20 @@ public class Inventory : MonoBehaviour
     public void Bind(List<SlotData> slotDatas)
     {
         localSlotDatas = slotDatas;
+
+        BindSlots(slotDatas, GeneralSlots, "General");
+        BindSlots(slotDatas, CraftingSlots, "Crafting");
+
+        var overflowSlotDatas = slotDatas.Where(t => t.SlotName.StartsWith("Overflow") 
+                                                     && String.IsNullOrWhiteSpace(t.ItemName) == false).ToList();
+
+        foreach (var overflowSlotData in overflowSlotDatas)
+        {
+            var itemSlot = new ItemSlot();
+            itemSlot.Bind(overflowSlotData);
+            OverflowSlots.Add(itemSlot);
+        }
+
         CreateOverflowSlot();
         TopOverflowSlot.Changed += () =>
         {
@@ -125,28 +142,19 @@ public class Inventory : MonoBehaviour
             {
                 MoveOverflowItemsUp();
             }
-        };
+       };
 
-        for (int i = 0; i < GeneralSlots.Length; i++)
+    }
+
+    void BindSlots(List<SlotData> slotDatas, ItemSlot[] slots, string slotName)
+    {
+        for (int i = 0; i < slots.Length; i++)
         {
             var slot = GeneralSlots[i];
-            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == "General" + i);
+            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == slotName + i);
             if (slotData == null)
             {
-                slotData = new SlotData() { SlotName = "General" + i };
-                slotDatas.Add(slotData);
-            }
-
-            slot.Bind(slotData);
-        }
-
-        for (int i = 0; i < CraftingSlots.Length; i++)
-        {
-            var slot = CraftingSlots[i];
-            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == "Crafting" + i);
-            if (slotData == null)
-            {
-                slotData = new SlotData() { SlotName = "Crafting" + i };
+                slotData = new SlotData() { SlotName = slotName + i };
                 slotDatas.Add(slotData);
             }
 
