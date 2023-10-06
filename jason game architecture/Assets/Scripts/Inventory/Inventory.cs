@@ -146,11 +146,11 @@ public class Inventory : MonoBehaviour
 
     }
 
-    void BindSlots(List<SlotData> slotDatas, ItemSlot[] slots, string slotName)
+    static void BindSlots(List<SlotData> slotDatas, ItemSlot[] slots, string slotName)
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            var slot = GeneralSlots[i];
+            var slot = slots[i];
             var slotData = slotDatas.FirstOrDefault(t => t.SlotName == slotName + i);
             if (slotData == null)
             {
