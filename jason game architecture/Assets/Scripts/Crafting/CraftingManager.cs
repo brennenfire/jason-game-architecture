@@ -10,20 +10,42 @@ public class CraftingManager : MonoBehaviour
 
     public void TryCrafting()
     {
+        var itemsInCrafting = Inventory.Instance.CraftingSlots
+            .Select(t => t.Item)
+            .Where(t => t != null).ToList();
+
         foreach (var recipe in recipes)
         {
-            if(IsMatchingRecipe(recipe, Inventory.Instance.CraftingSlots))
+            if (AreListsMatching(recipe.Ingredients, itemsInCrafting) == false)
             {
-                Inventory.Instance.ClearCraftingSlots();
-
-                foreach (var reward in recipe.Rewards)
-                {
-                    Inventory.Instance.AddItem(reward, InventoryType.Crafting);
-                }
-                Debug.Log($"Crafted the recipe {recipe.name}");
-                return;
+                continue;
             }
+
+            var rewards = (IsMatchingRecipe(recipe, Inventory.Instance.CraftingSlots)) ? recipe.Rewards : recipe.FallbackRewards;
+
+            Inventory.Instance.ClearCraftingSlots();
+
+            foreach (var reward in rewards)
+            {
+            Inventory.Instance.AddItem(reward, InventoryType.Crafting);
+            }
+            Debug.Log($"Crafted the recipe {recipe.name}");
+            return;
+            
         }
+    }
+
+    bool AreListsMatching(List<Item> ingredients, List<Item> itemsInCrafting)
+    {
+        if(ingredients.Except(itemsInCrafting).Any())
+        {
+            return false;
+        }
+        if (itemsInCrafting.Except(ingredients).Any())
+        {
+            return false;
+        }
+        return true;
     }
 
     bool IsMatchingRecipe(Recipe recipe, ItemSlot[] craftingSlots)
