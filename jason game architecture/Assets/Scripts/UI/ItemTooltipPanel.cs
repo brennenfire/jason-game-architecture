@@ -13,6 +13,7 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
     [SerializeField] TMP_Text name;
     [SerializeField] TMP_Text description;
     [SerializeField] Image icon;
+    [SerializeField] Button placeButton;
 
     CanvasGroup canvasGroup;
 
@@ -20,6 +21,7 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
     {
         Instance = this;
         canvasGroup = GetComponent<CanvasGroup>();
+        Toggle(false);  
     }
 
     public void ShowItem(Item item)
@@ -34,6 +36,7 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
             name.SetText(item.name);
             description.SetText(item.Description);
             icon.sprite = item.Icon;
+            placeButton.gameObject.SetActive(item.PlaceablePrefab != null);
         }
     }
 
