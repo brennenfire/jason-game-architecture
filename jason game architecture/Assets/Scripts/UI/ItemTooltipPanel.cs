@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -16,16 +17,25 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
     [SerializeField] Button placeButton;
 
     CanvasGroup canvasGroup;
+    ItemSlot itemSlotLocal;
 
     void Awake()
     {
         Instance = this;
         canvasGroup = GetComponent<CanvasGroup>();
-        Toggle(false);  
+        Toggle(false);
+        placeButton.onClick.AddListener(TryPlace);
     }
 
-    public void ShowItem(Item item)
+    void TryPlace()
     {
+        PlacementManager.Instance.BeginPlacement(itemSlotLocal);
+    }
+
+    public void ShowItem(ItemSlot itemSlot)
+    {
+        itemSlotLocal = itemSlot;
+        var item = itemSlot.Item;
         if (item == null)
         {
             Toggle(false);

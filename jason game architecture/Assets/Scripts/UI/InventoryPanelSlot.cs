@@ -103,7 +103,7 @@ public class InventoryPanelSlot : MonoBehaviour,
         }
         else
         {
-            ItemTooltipPanel.Instance.ShowItem(itemSlotLocal.Item);
+            ItemTooltipPanel.Instance.ShowItem(itemSlotLocal);
         }
     }
 
