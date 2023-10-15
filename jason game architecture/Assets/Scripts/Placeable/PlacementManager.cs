@@ -9,6 +9,7 @@ public class PlacementManager : MonoBehaviour
 
     public ItemSlot itemSlotLocal;
     GameObject placeable;
+    [SerializeField] float rotateSpeed = 500f;
 
     public static PlacementManager Instance { get; private set; }
 
@@ -45,5 +46,8 @@ public class PlacementManager : MonoBehaviour
         {
             placeable.transform.position = hitInfo.point;
         }
+
+        var rotation = Input.mouseScrollDelta.y * Time.deltaTime * rotateSpeed;
+        placeable.transform.Rotate(0, rotation, 0);
     }
 }

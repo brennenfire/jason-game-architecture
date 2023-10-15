@@ -6383,6 +6383,7 @@ MonoBehaviour:
     m_Bits: 64
   itemSlotLocal:
     Item: {fileID: 0}
+  rotateSpeed: 2000
 --- !u!4 &476215930
 Transform:
   m_ObjectHideFlags: 0
