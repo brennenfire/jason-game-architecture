@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
+    [SerializeField] LayerMask layerMask;
+
     public ItemSlot itemSlotLocal;
+    GameObject placeable;
 
     public static PlacementManager Instance { get; private set; }
 
@@ -17,15 +20,30 @@ public class PlacementManager : MonoBehaviour
             return;
         }
 
+
         itemSlotLocal = itemSlot;
         Debug.Log($"started placing {itemSlotLocal.Item}");
 
-        var placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
+        placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
         placeable.transform.SetParent(transform);
     }
 
     void Awake()
     {
         Instance = this;        
+    }
+
+    void Update()
+    {
+        if(placeable == null)
+        {
+            return;
+        }
+
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            placeable.transform.position = hitInfo.point;
+        }
     }
 }

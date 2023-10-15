@@ -6378,6 +6378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6c506f6dc0dfc4d9e4ff65089ee99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   itemSlotLocal:
     Item: {fileID: 0}
 --- !u!4 &476215930
@@ -14716,7 +14719,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25824
+  m_Name: pb_Mesh25836
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21855,7 +21858,7 @@ GameObject:
   - component: {fileID: 1666531495}
   - component: {fileID: 1666531494}
   - component: {fileID: 1666531493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
