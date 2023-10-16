@@ -41,13 +41,24 @@ public class PlacementManager : MonoBehaviour
             return;
         }
 
+        var rotation = Input.mouseScrollDelta.y * Time.deltaTime * rotateSpeed;
+        placeable.transform.Rotate(0, rotation, 0);
+
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, layerMask, QueryTriggerInteraction.Ignore))
         {
             placeable.transform.position = hitInfo.point;
+            if(Input.GetMouseButtonDown(0))
+            {
+                FinishPlacement();
+            }
         }
+    }
 
-        var rotation = Input.mouseScrollDelta.y * Time.deltaTime * rotateSpeed;
-        placeable.transform.Rotate(0, rotation, 0);
+    void FinishPlacement()
+    {
+        placeable = null;
+        itemSlotLocal.RemoveItem();
+        itemSlotLocal = null;
     }
 }

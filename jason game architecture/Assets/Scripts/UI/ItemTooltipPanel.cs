@@ -30,6 +30,7 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
     void TryPlace()
     {
         PlacementManager.Instance.BeginPlacement(itemSlotLocal);
+        Toggle(false);
     }
 
     public void ShowItem(ItemSlot itemSlot)
