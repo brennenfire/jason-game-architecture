@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
@@ -9,7 +10,12 @@ public class PlacementManager : MonoBehaviour
 
     public ItemSlot itemSlotLocal;
     GameObject placeable;
+
     [SerializeField] float rotateSpeed = 500f;
+    [SerializeField] List<GameObject> allPlaceables;
+
+    List<PlaceableData> localPlaceableDatas;
+    
 
     public static PlacementManager Instance { get; private set; }
 
@@ -57,8 +63,32 @@ public class PlacementManager : MonoBehaviour
 
     void FinishPlacement()
     {
+        localPlaceableDatas.Add(new PlaceableData()
+        {
+            PlaceablePrefab = itemSlotLocal.Item.PlaceablePrefab.name,
+            Position = placeable.transform.position,
+            Rotation = placeable.transform.rotation
+        });
         placeable = null;
         itemSlotLocal.RemoveItem();
         itemSlotLocal = null;
+    }
+
+    public void Bind(List<PlaceableData> placeablesDatas)
+    {
+        localPlaceableDatas = placeablesDatas;
+
+        foreach (var placeableData in localPlaceableDatas)
+        {
+            var prefab = allPlaceables.FirstOrDefault(t => t.name == placeableData.PlaceablePrefab);
+            if(prefab != null)
+            {
+                Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+            }
+            else
+            {
+                Debug.LogError($"unable respawn placeable item {placeableData.PlaceablePrefab}");
+            }
+        }
     }
 }

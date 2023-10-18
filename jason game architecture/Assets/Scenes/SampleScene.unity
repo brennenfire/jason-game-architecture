@@ -6384,6 +6384,8 @@ MonoBehaviour:
   itemSlotLocal:
     Item: {fileID: 0}
   rotateSpeed: 2000
+  allPlaceables:
+  - {fileID: 6956859776625008613, guid: c731e878a47a4244d827e34f2fd04bf3, type: 3}
 --- !u!4 &476215930
 Transform:
   m_ObjectHideFlags: 0
@@ -10152,6 +10154,7 @@ MonoBehaviour:
     GameFlagDatas: []
     InspectableDatas: []
     SlotDatas: []
+    PlaceablesDatas: []
 --- !u!4 &811502896
 Transform:
   m_ObjectHideFlags: 0
