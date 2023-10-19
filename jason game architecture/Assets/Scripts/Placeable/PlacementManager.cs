@@ -9,10 +9,10 @@ public class PlacementManager : MonoBehaviour
     [SerializeField] LayerMask layerMask;
 
     public ItemSlot itemSlotLocal;
-    GameObject placeable;
+    Placeable placeable;
 
     [SerializeField] float rotateSpeed = 500f;
-    [SerializeField] List<GameObject> allPlaceables;
+    [SerializeField] List<Placeable> allPlaceables;
 
     List<PlaceableData> localPlaceableDatas;
     
@@ -69,6 +69,8 @@ public class PlacementManager : MonoBehaviour
             Position = placeable.transform.position,
             Rotation = placeable.transform.rotation
         });
+
+        placeable.Place();
         placeable = null;
         itemSlotLocal.RemoveItem();
         itemSlotLocal = null;
@@ -83,7 +85,11 @@ public class PlacementManager : MonoBehaviour
             var prefab = allPlaceables.FirstOrDefault(t => t.name == placeableData.PlaceablePrefab);
             if(prefab != null)
             {
-                Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+                var placeable = Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+                if (placeable != null)
+                {
+                    placeable.Place();
+                }
             }
             else
             {
