@@ -3550,6 +3550,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewObject: {fileID: 2896716097660778908}
   placedObject: {fileID: 2186746708942052505}
+  tintedRenderers:
+  - {fileID: 2896716097660778977}
+  - {fileID: 2896716098776189800}
+  - {fileID: 2896716099665938951}
+  - {fileID: 2896716099186809541}
+  - {fileID: 2896716099226808108}
+  defaultColor: {r: 1, g: 1, b: 1, a: 0.54509807}
+  invalidColor: {r: 1, g: 0, b: 0, a: 0.49803922}
 --- !u!1001 &9138746545381901180
 PrefabInstance:
   m_ObjectHideFlags: 0
