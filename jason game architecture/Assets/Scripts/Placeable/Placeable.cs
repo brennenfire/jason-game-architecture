@@ -10,8 +10,14 @@ public class Placeable : MonoBehaviour
     [SerializeField] List<Renderer> tintedRenderers;
     [SerializeField] Color defaultColor;
     [SerializeField] Color invalidColor;
+    InRangeOfPlayerValidator[] validators;
 
     public bool IsPlacementValid { get; private set; }
+
+    void Awake()
+    {
+        validators = GetComponents<InRangeOfPlayerValidator>();    
+    }
 
     public void Place()
     {
@@ -24,9 +30,13 @@ public class Placeable : MonoBehaviour
         transform.position = point; 
         IsPlacementValid = true;
 
-        if(Vector3.Distance(transform.position, FindObjectOfType<ThirdPersonMover>().transform.position) > 10f)
+        foreach (var validator in validators)
         {
-            IsPlacementValid = false;
+            if(validator.IsValid() == false)
+            {
+                IsPlacementValid = false;
+                break;
+            }
         }
 
         foreach (var renderer  in tintedRenderers)
