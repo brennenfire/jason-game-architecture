@@ -10,13 +10,13 @@ public class Placeable : MonoBehaviour
     [SerializeField] List<Renderer> tintedRenderers;
     [SerializeField] Color defaultColor;
     [SerializeField] Color invalidColor;
-    InRangeOfPlayerValidator[] validators;
+    IValidatePlacement[] validators;
 
     public bool IsPlacementValid { get; private set; }
 
     void Awake()
     {
-        validators = GetComponents<InRangeOfPlayerValidator>();    
+        validators = GetComponents<IValidatePlacement>();    
     }
 
     public void Place()
