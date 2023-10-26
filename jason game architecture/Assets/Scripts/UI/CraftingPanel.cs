@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CraftingPanel : MonoBehaviour
+public class CraftingPanel : ToggleablePanel
 {
     void Start()
     {

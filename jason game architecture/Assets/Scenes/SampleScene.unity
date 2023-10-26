@@ -7021,6 +7021,7 @@ GameObject:
   - component: {fileID: 540183497}
   - component: {fileID: 540183496}
   - component: {fileID: 540183495}
+  - component: {fileID: 540183500}
   m_Layer: 5
   m_Name: '[CANVAS] Crafting'
   m_TagString: Untagged
@@ -7040,6 +7041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0196d38b5a28346a25690ed2273b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hotkey: 99
 --- !u!114 &540183496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7122,6 +7124,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &540183500
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540183494}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &601745464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10838,7 +10852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816135553}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f033eef3cb99d642a32fb622e3e5577, type: 3}
   m_Name: 
@@ -18165,6 +18179,7 @@ GameObject:
   - component: {fileID: 1222515433}
   - component: {fileID: 1222515432}
   - component: {fileID: 1222515436}
+  - component: {fileID: 1222515437}
   m_Layer: 5
   m_Name: '[CANVAS] Inventory'
   m_TagString: Untagged
@@ -18267,7 +18282,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c899f962557f8f44923dce419532b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hotkey: 105
   overflowSlot: {fileID: 1335779261}
+--- !u!225 &1222515437
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222515431}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!43 &1231105016
 Mesh:
   m_ObjectHideFlags: 0
@@ -18548,6 +18576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d91108ef4e8184a8ad836fd8e61d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hotkey: 0
   storyText: {fileID: 1757723889}
   choiceButtons:
   - {fileID: 791360382}
@@ -20907,6 +20936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656a514b6eff1fd4b999dae1cc236cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hotkey: 0
   selectedQuest: {fileID: 11400000, guid: bd0c608bdc7d88b48b08748d0efa4892, type: 2}
   nameText: {fileID: 1541033743}
   descriptionText: {fileID: 737567343}

@@ -1,13 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class ToggleablePanel : MonoBehaviour
 {
     CanvasGroup canvasGroup;
     static HashSet<ToggleablePanel> visiblePanels = new HashSet<ToggleablePanel>();
 
-    public static bool IsVisible => visiblePanels.Any();
+    public static bool AnyVisible => visiblePanels.Any();
+    bool IsVisible => canvasGroup.alpha > 0;
+
+    [SerializeField] KeyCode Hotkey;
 
     void Awake()
     {
@@ -15,10 +20,34 @@ public class ToggleablePanel : MonoBehaviour
         Hide();
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(Hotkey)) 
+        {
+            ToggleState();
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            Hide();
+        }
+    }
+
+    void ToggleState()
+    {
+        if(IsVisible)
+        {
+            Hide();
+        }
+        else
+        {
+            Show();
+        }
+    }
+
     protected void Show()
     {
         visiblePanels.Add(this);
-        canvasGroup.alpha = 0.5f;
+        canvasGroup.alpha = 1f;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
     }
