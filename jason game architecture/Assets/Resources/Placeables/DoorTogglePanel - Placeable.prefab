@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4509
+  m_VersionIndex: 4515
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -428,8 +428,9 @@ GameObject:
   - component: {fileID: 2186746708942052506}
   - component: {fileID: 2186746708942052577}
   - component: {fileID: 2255589505769676042}
+  - component: {fileID: 8845939933159647374}
   m_Layer: 0
-  m_Name: ControlPanel
+  m_Name: DoorTogglePanel - Placed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -981,7 +982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3046
+  m_VersionIndex: 3052
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1111,13 +1112,13 @@ MonoBehaviour:
   OnInspectionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8845939933159647374}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1125,6 +1126,18 @@ MonoBehaviour:
         m_CallState: 2
   requireMinigame: 0
   minigameSettings: {fileID: 0}
+--- !u!114 &8845939933159647374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186746708942052505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fba4ccf9d5d7e448b9c05af343a13ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2896716097660778908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1152,7 @@ GameObject:
   - component: {fileID: 2896716097660778977}
   - component: {fileID: 2896716097660778910}
   m_Layer: 0
-  m_Name: ControlPanel - Preview
+  m_Name: DoorTogglePanel - Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1691,7 +1704,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3121
+  m_VersionIndex: 3151
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2092,7 +2105,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4584
+  m_VersionIndex: 4614
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2905,7 +2918,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1600
+  m_VersionIndex: 1630
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3818,7 +3831,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1573
+  m_VersionIndex: 1579
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

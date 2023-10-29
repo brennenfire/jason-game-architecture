@@ -3516,7 +3516,7 @@ GameObject:
   - component: {fileID: 8292589596447774864}
   - component: {fileID: 1717607869713278269}
   m_Layer: 0
-  m_Name: ControlPanel - Placeable 1
+  m_Name: ControlPanel - Placeable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

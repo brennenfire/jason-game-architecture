@@ -7,6 +7,7 @@ using UnityEngine;
 public class InspectionManager : MonoBehaviour
 {
     static Inspectable currentInspectable;
+    static List<InspectableData> localDatas;
 
     public static float InspectionProgress => currentInspectable?.InspectionProgress ?? 0f;
     public static bool Inspecting => currentInspectable != null && currentInspectable.WasFullyInspected == false;
@@ -29,16 +30,22 @@ public class InspectionManager : MonoBehaviour
 
     public static void Bind(List<InspectableData> datas)
     {
+        localDatas = datas;
         var allInspectables = GameObject.FindObjectsOfType<Inspectable>(true);
-        foreach(var inspectable in allInspectables) 
+        foreach(var inspectable in allInspectables)
         {
-            var data = datas.FirstOrDefault(t => t.Name == inspectable.name);
-            if (data == null)
-            {
-                data = new InspectableData() { Name = inspectable.name };
-                datas.Add(data);
-            }
-            inspectable.Bind(data);
+            Bind(inspectable);
         }
+    }
+
+    public static void Bind(Inspectable inspectable)
+    {
+        var data = localDatas.FirstOrDefault(t => t.Name == inspectable.name);
+        if (data == null)
+        {
+            data = new InspectableData() { Name = inspectable.name };
+            localDatas.Add(data);
+        }
+        inspectable.Bind(data);
     }
 }

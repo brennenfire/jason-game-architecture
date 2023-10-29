@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -44,6 +45,15 @@ public class Inspectable : MonoBehaviour
     void Awake()
     {
         allConditions = GetComponents<IMet>();    
+    }
+
+    IEnumerator Start()
+    {
+        yield return null;
+        if(data == null)
+        {
+            InspectionManager.Bind(this);
+        }
     }
 
     public void Bind(InspectableData inspectableData)
