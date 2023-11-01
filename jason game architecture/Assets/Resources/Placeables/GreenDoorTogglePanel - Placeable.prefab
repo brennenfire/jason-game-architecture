@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4518
+  m_VersionIndex: 4521
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3055
+  m_VersionIndex: 3058
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3017,7 +3017,7 @@ GameObject:
   - component: {fileID: 2125745545350541601}
   - component: {fileID: 1997503461703180779}
   - component: {fileID: 8549530507574226176}
-  - component: {fileID: 8292589596447774864}
+  - component: {fileID: -5984011506829608805}
   - component: {fileID: 1717607869713278269}
   m_Layer: 0
   m_Name: GreenDoorTogglePanel - Placeable
@@ -3076,7 +3076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentlyBlockedBy: {fileID: 0}
---- !u!114 &8292589596447774864
+--- !u!114 &-5984011506829608805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3085,10 +3085,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2970458612765902514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6fe3afa284d8ae459324c46552c53a1, type: 3}
+  m_Script: {fileID: 11500000, guid: ab5025958d4108d45b5e945be34f7387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 10
 --- !u!65 &1717607869713278269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3833,7 +3833,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1582
+  m_VersionIndex: 1585
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

@@ -11,7 +11,7 @@ public class Activator : MonoBehaviour
     public void Activate()
     {
         var allActivatablesMatchingTag = FindObjectsOfType<Activatable>()
-            .Where(t => t.CompareTag(activatableTag) <= radius);
+            .Where(t => t.CompareTag(activatableTag));
 
         var allActivatablesInRange = allActivatablesMatchingTag
             .Where(t => Vector3.Distance(t.transform.position, transform.position) <= radius);
