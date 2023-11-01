@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
+    [SerializeField] float radius = 10f;
+    [SerializeField] string activatableTag;
+
     public void Activate()
     {
-        var allActivatables = FindObjectsOfType<Activatable>();
-        foreach (var activatable in allActivatables)
+        var allActivatablesMatchingTag = FindObjectsOfType<Activatable>()
+            .Where(t => t.CompareTag(activatableTag) <= radius);
+
+        var allActivatablesInRange = allActivatablesMatchingTag
+            .Where(t => Vector3.Distance(t.transform.position, transform.position) <= radius);
+        foreach (var activatable in allActivatablesInRange)
         {
             activatable.Toggle();
         }

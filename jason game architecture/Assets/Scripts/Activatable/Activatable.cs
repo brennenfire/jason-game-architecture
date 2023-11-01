@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,5 +21,10 @@ public class Activatable : MonoBehaviour
         {
             onDeactivated.Invoke();
         }
+    }
+
+    internal float CompareTag(object activatableTag)
+    {
+        throw new NotImplementedException();
     }
 }

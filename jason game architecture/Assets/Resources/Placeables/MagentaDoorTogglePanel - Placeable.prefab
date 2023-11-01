@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4515
+  m_VersionIndex: 4518
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3052
+  m_VersionIndex: 3055
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1138,6 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fba4ccf9d5d7e448b9c05af343a13ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 10
+  activatableTag: MagentaDoor
 --- !u!1 &2896716097660778908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3020,7 @@ GameObject:
   - component: {fileID: 8292589596447774864}
   - component: {fileID: 1717607869713278269}
   m_Layer: 0
-  m_Name: DoorTogglePanel - Placeable
+  m_Name: MagentaDoorTogglePanel - Placeable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3831,7 +3833,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1579
+  m_VersionIndex: 1582
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
