@@ -4919,7 +4919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.26213384
+      value: 22.50225
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8206,7 +8206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449860792}
   m_LocalRotation: {x: -0.06989915, y: -0.13436605, z: -0.009502128, w: 0.98841774}
-  m_LocalPosition: {x: 6.5158944, y: 4.262566, z: -17.581827}
+  m_LocalPosition: {x: 6.5158944, y: 4.262566, z: 5.182557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15849,7 +15849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.05413, y: 1.605, z: -2.2621338}
+  m_LocalPosition: {x: 7.05413, y: 1.605, z: 20.50225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33348,9 +33348,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras:
-  - {fileID: 178993758}
-  - {fileID: 1516421193}
+  m_ChildCameras: []
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
