@@ -6,7 +6,7 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     [SerializeField] ActivatorMode mode;
-
+    [DrawIf(nameof(mode), ActivatorMode.AllInRadius)]
     [SerializeField] float radius = 10f;
     [SerializeField] string activatableTag;
 
