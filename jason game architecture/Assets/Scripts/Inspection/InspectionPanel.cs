@@ -16,17 +16,17 @@ public class InspectionPanel : MonoBehaviour
     {
         hintText.enabled = false;
         completedInspectionText.enabled = false;
-        Inspectable.InspectablesInRangeChanged += UpdateHintTextState;
-        Inspectable.AnyInspectionComplete += ShowCompletedInspectionText;
+        Interactable.InteractablesInRangeChanged += UpdateHintTextState;
+        Interactable.AnyInteractionComplete += ShowCompletedInspectionText;
     }
 
     void OnDisable()
     {
-        Inspectable.InspectablesInRangeChanged -= UpdateHintTextState;
-        Inspectable.AnyInspectionComplete -= ShowCompletedInspectionText;
+        Interactable.InteractablesInRangeChanged -= UpdateHintTextState;
+        Interactable.AnyInteractionComplete -= ShowCompletedInspectionText;
     }
 
-    void ShowCompletedInspectionText(Inspectable inspectable, string completedInspectionMessage)
+    void ShowCompletedInspectionText(Interactable inspectable, string completedInspectionMessage)
     {
         completedInspectionText.SetText(completedInspectionMessage);
         completedInspectionText.enabled = true;
@@ -54,9 +54,9 @@ public class InspectionPanel : MonoBehaviour
 
     void Update()
     {
-        if (InspectionManager.Inspecting)
+        if (InteractionManager.Interaction)
         {
-            progressBarFilledImage.fillAmount = InspectionManager.InspectionProgress;
+            progressBarFilledImage.fillAmount = InteractionManager.InteractionProgress;
             progressBar.SetActive(true);
         }
         else if (progressBar.activeSelf)

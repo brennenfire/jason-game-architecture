@@ -2,11 +2,11 @@
 
 internal class MetInspectedConditionsBase : MonoBehaviour, IMet
 {
-    [SerializeField] Inspectable requiredInspectable;
+    [SerializeField] Interactable requiredInspectable;
 
     public bool Met()
     {
-        return requiredInspectable.WasFullyInspected;
+        return requiredInspectable.WasFullyInteracted;
     }
 
     void OnDrawGizmos()
