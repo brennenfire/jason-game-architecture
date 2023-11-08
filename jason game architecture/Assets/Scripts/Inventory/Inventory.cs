@@ -34,6 +34,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void AddItemFromEvent(Item item)
+    {
+        AddItem(item);
+    }
+
     public void AddItem(Item item, InventoryType preferredInventoryType = InventoryType.General)
     {
         var preferredSlots = preferredInventoryType == InventoryType.General ? GeneralSlots : CraftingSlots;

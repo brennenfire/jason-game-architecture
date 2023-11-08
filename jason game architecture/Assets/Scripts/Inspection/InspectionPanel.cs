@@ -54,7 +54,7 @@ public class InspectionPanel : MonoBehaviour
 
     void Update()
     {
-        if (InteractionManager.Interaction)
+        if (InteractionManager.Interacting)
         {
             progressBarFilledImage.fillAmount = InteractionManager.InteractionProgress;
             progressBar.SetActive(true);

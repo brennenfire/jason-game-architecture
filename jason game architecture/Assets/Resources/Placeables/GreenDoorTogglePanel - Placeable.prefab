@@ -1979,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318820761346377577, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 4530
+      value: 4536
       objectReference: {fileID: 0}
     - target: {fileID: 3318820761346377578, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_Mesh
@@ -2003,7 +2003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318820762461287904, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 3067
+      value: 3073
       objectReference: {fileID: 0}
     - target: {fileID: 3318820762461287905, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_RootOrder
@@ -2049,6 +2049,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: interactionType
+      value: 
+      objectReference: {fileID: 11400000, guid: 949375e9761f2e64ca7556de1899640e, type: 2}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8845939933159647374}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Activator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788102064111571173, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6650631232364292731, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2059,7 +2091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8168592429667407693, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1594
+      value: 1600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
@@ -2073,3 +2105,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3318820762461287905, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
   m_PrefabInstance: {fileID: 3483027907403376902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8845939933159647374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5374242334284218760, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
+  m_PrefabInstance: {fileID: 3483027907403376902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186746708942052505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fba4ccf9d5d7e448b9c05af343a13ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

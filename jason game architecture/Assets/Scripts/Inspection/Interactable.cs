@@ -13,8 +13,8 @@ public class Interactable : MonoBehaviour
 
     static HashSet<Interactable> interactablesInRange = new HashSet<Interactable>();
 
+    [SerializeField] InteractionType interactionType;
     [SerializeField] float timeToInteract = 3f;
-    [SerializeField, TextArea] string completedInteractionText;
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] bool requireMinigame = false;
     [SerializeField] MinigameSettings minigameSettings;
@@ -22,12 +22,14 @@ public class Interactable : MonoBehaviour
     InteractableData data;
     IMet[] allConditions;
     
+    public KeyCode Hotkey => interactionType.Hotkey;
+
     public static IReadOnlyCollection<Interactable> InteractablesInRange => interactablesInRange;
 
     public float InteractionProgress => data?.TimeInteracted ?? 0f / timeToInteract;
 
     public bool WasFullyInteracted => InteractionProgress >= 1;
-
+     
     public bool MeetsConditions()
     {
         foreach(var condition in allConditions) 
@@ -128,7 +130,7 @@ public class Interactable : MonoBehaviour
         interactablesInRange.Remove(this);
         InteractablesInRangeChanged?.Invoke(interactablesInRange.Any());
         OnInteractionCompleted?.Invoke();
-        AnyInteractionComplete?.Invoke(this, completedInteractionText);
+        AnyInteractionComplete?.Invoke(this, interactionType.CompletedInteraction);
     }
 
     void RestoreInteractionText()

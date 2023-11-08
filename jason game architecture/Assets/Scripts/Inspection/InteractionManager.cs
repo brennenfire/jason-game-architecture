@@ -10,21 +10,37 @@ public class InteractionManager : MonoBehaviour
     static List<InteractableData> localDatas;
 
     public static float InteractionProgress => currentInteractable?.InteractionProgress ?? 0f;
-    public static bool Interaction => currentInteractable != null && currentInteractable.WasFullyInteracted == false;
+    public static bool Interacting { get; private set; }
+
+    void Awake()
+    {
+        Interactable.InteractablesInRangeChanged += HandleInteractablesInRangeChanged;    
+    }
+
+    void OnDestroy()
+    {
+        Interactable.InteractablesInRangeChanged -= HandleInteractablesInRangeChanged;
+    }
+
+    void HandleInteractablesInRangeChanged(bool obj)
+    {
+        var nearest = Interactable.InteractablesInRange.
+            OrderBy(t => Vector3.Distance(t.transform.position, transform.position)).
+            FirstOrDefault();
+
+        currentInteractable = nearest;
+    }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            currentInteractable = Interactable.InteractablesInRange.FirstOrDefault();
-        }
-        if(Input.GetKey(KeyCode.E) && currentInteractable != null) 
+        if(currentInteractable != null && Input.GetKey(currentInteractable.Hotkey))
         {
             currentInteractable.Interact();
+            Interacting = true;
         }
         else
         {
-            currentInteractable = null;
+            Interacting = false;
         }
     }
 
