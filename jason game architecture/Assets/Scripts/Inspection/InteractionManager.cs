@@ -12,6 +12,8 @@ public class InteractionManager : MonoBehaviour
     public static float InteractionProgress => currentInteractable?.InteractionProgress ?? 0f;
     public static bool Interacting { get; private set; }
 
+    public event Action<Interactable> CurrentInteractableChanged;
+
     void Awake()
     {
         Interactable.InteractablesInRangeChanged += HandleInteractablesInRangeChanged;    
@@ -29,11 +31,12 @@ public class InteractionManager : MonoBehaviour
             FirstOrDefault();
 
         currentInteractable = nearest;
+        CurrentInteractableChanged.Invoke(currentInteractable);
     }
 
     void Update()
     {
-        if(currentInteractable != null && Input.GetKey(currentInteractable.Hotkey))
+        if(currentInteractable != null && Input.GetKey(currentInteractable.InteractionType.Hotkey))
         {
             currentInteractable.Interact();
             Interacting = true;

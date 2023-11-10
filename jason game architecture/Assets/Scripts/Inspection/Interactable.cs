@@ -21,8 +21,10 @@ public class Interactable : MonoBehaviour
 
     InteractableData data;
     IMet[] allConditions;
-    
-    public KeyCode Hotkey => interactionType.Hotkey;
+
+    public InteractionType InteractionType => interactionType;
+
+    //public KeyCode Hotkey => interactionType.Hotkey;
 
     public static IReadOnlyCollection<Interactable> InteractablesInRange => interactablesInRange;
 
