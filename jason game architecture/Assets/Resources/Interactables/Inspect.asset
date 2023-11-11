@@ -17,3 +17,4 @@ MonoBehaviour:
   DuringInteraction: inspecting
   FailedInteraction: you fail inspect
   CompletedInteraction: good inspect
+  IsDefault: 1

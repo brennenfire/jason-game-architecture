@@ -46,6 +46,16 @@ public class Interactable : MonoBehaviour
         return true;
     }
 
+    void OnValidate()
+    {
+        if(interactionType == null) 
+        {
+            interactionType = Resources.FindObjectsOfTypeAll<InteractionType>().
+                Where(t => t.IsDefault).
+                FirstOrDefault();
+        }    
+    }
+
     void Awake()
     {
         allConditions = GetComponents<IMet>();    
