@@ -11,6 +11,6 @@ public class ToggleInteractable : Interactable
     {
         SendInteractionComplete();
         toggleState = !toggleState;
-        data.TimeInteracted += 0f;
+        data.TimeInteracted = 0f;
     }
 }
