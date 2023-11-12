@@ -13,16 +13,16 @@ public class Interactable : MonoBehaviour
 
     static HashSet<Interactable> interactablesInRange = new HashSet<Interactable>();
 
-    [SerializeField] InteractionType interactionType;
+    [SerializeField] protected InteractionType interactionType;
     [SerializeField] float timeToInteract = 3f;
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] bool requireMinigame = false;
     [SerializeField] MinigameSettings minigameSettings;
 
-    InteractableData data;
+    protected InteractableData data;
     IMet[] allConditions;
 
-    public InteractionType InteractionType => interactionType;
+    public virtual InteractionType InteractionType => interactionType;
 
     //public KeyCode Hotkey => interactionType.Hotkey;
 
@@ -137,12 +137,17 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    void CompleteInteraction()
+    protected virtual void CompleteInteraction()
     {
         interactablesInRange.Remove(this);
+        SendInteractionComplete();
+    }
+
+    protected void SendInteractionComplete()
+    {
         InteractablesInRangeChanged?.Invoke(interactablesInRange.Any());
         OnInteractionCompleted?.Invoke();
-        AnyInteractionComplete?.Invoke(this, interactionType.CompletedInteraction);
+        AnyInteractionComplete?.Invoke(this, InteractionType.CompletedInteraction);
     }
 
     void RestoreInteractionText()

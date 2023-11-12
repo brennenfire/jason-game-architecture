@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 3318820762461287836}
   - component: {fileID: 3318820762461287911}
   - component: {fileID: 5374242334284218760}
-  - component: {fileID: 3788102064111571173}
+  - component: {fileID: -5160048277769123343}
   m_Layer: 0
   m_Name: GreenDoorTogglePanel - Placed
   m_TagString: Untagged
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   mode: 0
   radius: 10
   activatableTag: Door
---- !u!114 &3788102064111571173
+--- !u!114 &-5160048277769123343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1119,16 +1119,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 3318820762461287839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1f85026a8dde745b873ad523fb3175, type: 3}
+  m_Script: {fileID: 11500000, guid: 478654aaaaffecb4fa0eade7a940dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionType: {fileID: 11400000, guid: 949375e9761f2e64ca7556de1899640e, type: 2}
   timeToInteract: 3
-  completedInteractionText: 
   OnInteractionCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5374242334284218760}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   requireMinigame: 0
   minigameSettings: {fileID: 0}
+  toggledInteractionType: {fileID: 11400000, guid: 917f9b65532c41a4cb21bf66dad37075, type: 2}
 --- !u!1 &5799716741914336026
 GameObject:
   m_ObjectHideFlags: 0
