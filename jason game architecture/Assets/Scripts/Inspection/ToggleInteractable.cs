@@ -9,8 +9,8 @@ public class ToggleInteractable : Interactable
 
     protected override void CompleteInteraction()
     {
-        SendInteractionComplete();
         toggleState = !toggleState;
+        SendInteractionComplete();
         data.TimeInteracted = 0f;
     }
 }
