@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4793745532363456334}
   - component: {fileID: 1087643405057885406}
   m_Layer: 0
-  m_Name: BlueButton
+  m_Name: PurpleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1591
+  m_VersionIndex: 1594
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -787,7 +787,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 663834164c6a04740aaa1b778249ce7e, type: 2}
+  - {fileID: 2100000, guid: 36bce9ab6cae8ce43962938466458044, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4527
+  m_VersionIndex: 4530
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3064
+  m_VersionIndex: 3067
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1939,8 +1939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1f85026a8dde745b873ad523fb3175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionType: {fileID: 11400000, guid: 17cf9f077e8747e46910d7c15dd0433c, type: 2}
   timeToInteract: 3
-  completedInteractionText: 
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
