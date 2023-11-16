@@ -7,10 +7,12 @@ public class ToggleInteractable : Interactable
 
     public override InteractionType InteractionType => toggleState ? toggledInteractionType : interactionType;
 
+    /*
     protected override void AfterCompleteInteraction()
     {
         data.TimeInteracted = 0f;
     }
+    */
 
     protected override void OnBound()
     {

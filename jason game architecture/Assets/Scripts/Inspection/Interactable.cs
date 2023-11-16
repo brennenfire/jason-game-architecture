@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] bool requireMinigame = false;
     [SerializeField] MinigameSettings minigameSettings;
+    [SerializeField] int maxInteractions = 1;
 
     protected InteractableData data;
     IMet[] allConditions;
@@ -145,14 +146,29 @@ public class Interactable : MonoBehaviour
     void CompleteInteraction()
     {
         data.interactionCount++;
+
+        if (data.interactionCount < maxInteractions || maxInteractions == 0)
+        {
+            data.TimeInteracted = 0f;
+        }
+
         SendInteractionComplete();
-        AfterCompleteInteraction();
+        //AfterCompleteInteraction();
+        if (WasFullyInteracted)
+        {
+            interactablesInRange.Remove(this);
+        }
     }
 
+    /*
     protected virtual void AfterCompleteInteraction()
     {
-        interactablesInRange.Remove(this);
+        if (WasFullyInteracted)
+        {
+            interactablesInRange.Remove(this);
+        }
     }
+    */
 
     protected void SendInteractionComplete()
     {
