@@ -10131,6 +10131,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   requireMinigame: 0
   minigameSettings: {fileID: 0}
   maxInteractions: 1
@@ -14772,7 +14775,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25498
+  m_Name: pb_Mesh25522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15060,6 +15063,21 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661870173}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: test
           m_BoolArgument: 0
         m_CallState: 2
   requireMinigame: 0
@@ -17927,6 +17945,9 @@ MonoBehaviour:
   interactionType: {fileID: 11400000, guid: 17cf9f077e8747e46910d7c15dd0433c, type: 2}
   timeToInteract: 3
   OnInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
   requireMinigame: 1
@@ -23254,6 +23275,9 @@ MonoBehaviour:
   interactionType: {fileID: 11400000, guid: 17cf9f077e8747e46910d7c15dd0433c, type: 2}
   timeToInteract: 3
   OnInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
   requireMinigame: 1
@@ -30529,6 +30553,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   requireMinigame: 1
   minigameSettings: {fileID: 11400000, guid: ddb27a9632129514b9b018741c16043c, type: 2}
   maxInteractions: 1
@@ -31608,7 +31635,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2532
+  m_Name: pb_Mesh-2624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35446,7 +35473,7 @@ PrefabInstance:
       objectReference: {fileID: 811944199}
     - target: {fileID: 2454311978738514408, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 1600
+      value: 1603
       objectReference: {fileID: 0}
     - target: {fileID: 9033391625598577088, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_Mesh
@@ -35458,7 +35485,7 @@ PrefabInstance:
       objectReference: {fileID: 1113757955}
     - target: {fileID: 9033391625598577100, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 4536
+      value: 4539
       objectReference: {fileID: 0}
     - target: {fileID: 9033391625598577103, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_Mesh
@@ -35530,7 +35557,7 @@ PrefabInstance:
       objectReference: {fileID: 1549832535}
     - target: {fileID: 9033391626697218885, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 3073
+      value: 3076
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
@@ -35652,7 +35679,7 @@ PrefabInstance:
       objectReference: {fileID: 667381990}
     - target: {fileID: 3318820761346377577, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 4539
+      value: 4542
       objectReference: {fileID: 0}
     - target: {fileID: 3318820761346377578, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_Mesh
@@ -35680,7 +35707,7 @@ PrefabInstance:
       objectReference: {fileID: 924446304}
     - target: {fileID: 3318820762461287904, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 3076
+      value: 3079
       objectReference: {fileID: 0}
     - target: {fileID: 3318820762461287905, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_RootOrder
@@ -35736,7 +35763,7 @@ PrefabInstance:
       objectReference: {fileID: 1201964710}
     - target: {fileID: 8168592429667407693, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1603
+      value: 1606
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
