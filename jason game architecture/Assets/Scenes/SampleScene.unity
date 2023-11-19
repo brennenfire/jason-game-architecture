@@ -10134,6 +10134,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  rerunLastInteractionCompletedOnGameLoad: 0
   requireMinigame: 0
   minigameSettings: {fileID: 0}
   maxInteractions: 1
@@ -15080,6 +15081,7 @@ MonoBehaviour:
           m_StringArgument: test
           m_BoolArgument: 0
         m_CallState: 2
+  rerunLastInteractionCompletedOnGameLoad: 1
   requireMinigame: 0
   minigameSettings: {fileID: 0}
   maxInteractions: 3
@@ -17950,6 +17952,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  rerunLastInteractionCompletedOnGameLoad: 0
   requireMinigame: 1
   minigameSettings: {fileID: 11400000, guid: 643995c19893c1446864470e0ac15fb8, type: 2}
   maxInteractions: 1
@@ -23280,6 +23283,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  rerunLastInteractionCompletedOnGameLoad: 0
   requireMinigame: 1
   minigameSettings: {fileID: 11400000, guid: 17fbef62c70e8c2439da5d7d55c264b1, type: 2}
   maxInteractions: 1
@@ -30556,6 +30560,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  rerunLastInteractionCompletedOnGameLoad: 0
   requireMinigame: 1
   minigameSettings: {fileID: 11400000, guid: ddb27a9632129514b9b018741c16043c, type: 2}
   maxInteractions: 1
@@ -34791,9 +34796,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras:
-  - {fileID: 178993758}
-  - {fileID: 1516421193}
+  m_ChildCameras: []
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
@@ -35473,7 +35476,7 @@ PrefabInstance:
       objectReference: {fileID: 811944199}
     - target: {fileID: 2454311978738514408, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 1603
+      value: 1606
       objectReference: {fileID: 0}
     - target: {fileID: 9033391625598577088, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_Mesh
@@ -35485,7 +35488,7 @@ PrefabInstance:
       objectReference: {fileID: 1113757955}
     - target: {fileID: 9033391625598577100, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 4539
+      value: 4542
       objectReference: {fileID: 0}
     - target: {fileID: 9033391625598577103, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_Mesh
@@ -35557,7 +35560,7 @@ PrefabInstance:
       objectReference: {fileID: 1549832535}
     - target: {fileID: 9033391626697218885, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
       propertyPath: m_VersionIndex
-      value: 3076
+      value: 3079
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0218030aacc184fb2a1b26f3babae8, type: 3}
@@ -35679,7 +35682,7 @@ PrefabInstance:
       objectReference: {fileID: 667381990}
     - target: {fileID: 3318820761346377577, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 4542
+      value: 4545
       objectReference: {fileID: 0}
     - target: {fileID: 3318820761346377578, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_Mesh
@@ -35707,7 +35710,7 @@ PrefabInstance:
       objectReference: {fileID: 924446304}
     - target: {fileID: 3318820762461287904, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 3079
+      value: 3082
       objectReference: {fileID: 0}
     - target: {fileID: 3318820762461287905, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_RootOrder
@@ -35763,7 +35766,7 @@ PrefabInstance:
       objectReference: {fileID: 1201964710}
     - target: {fileID: 8168592429667407693, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
       propertyPath: m_VersionIndex
-      value: 1606
+      value: 1609
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4afdef9df12264aa94b00ef8463fb0, type: 3}
