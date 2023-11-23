@@ -9360,6 +9360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38abb38e1f586334a9c27b540f129d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allStats:
+  - {fileID: 11400000, guid: 26ac01c49fbf3fa4f9bbd727d74f8376, type: 2}
+  - {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
 --- !u!1001 &601745464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33218,7 +33221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredStatValue: 6
-  requiredStat: {fileID: 0}
+  requiredStat: {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
 --- !u!1 &1828701375
 GameObject:
   m_ObjectHideFlags: 0
@@ -35039,7 +35042,9 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
   m_Loop: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 178993758}
+  - {fileID: 1516421193}
   m_Instructions:
   - m_VirtualCamera: {fileID: 178993758}
     m_Hold: 1
