@@ -32,6 +32,8 @@ public class GamePersistence : MonoBehaviour
         {
             gameData = new GameData();
         }
+
+        StatsManager.Instance.Bind(gameData.StatDatas);
         Inventory.Instance.Bind(gameData.SlotDatas);
         FlagManager.Instance.Bind(gameData.GameFlagDatas);
         InteractionManager.Bind(gameData.InteractableDatas);
