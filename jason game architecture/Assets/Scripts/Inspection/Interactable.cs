@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
 {
     public static event Action<bool> InteractablesInRangeChanged;
     public static event Action<Interactable, string> AnyInteractionComplete;
+    public event Action InteractionCompleted;
 
     static HashSet<Interactable> interactablesInRange = new HashSet<Interactable>();
 
@@ -24,7 +25,7 @@ public class Interactable : MonoBehaviour
 
     protected InteractableData data;
     IMet[] allConditions;
-
+    
     public virtual InteractionType InteractionType => interactionType;
 
     //public KeyCode Hotkey => interactionType.Hotkey;
@@ -164,6 +165,8 @@ public class Interactable : MonoBehaviour
                 OnLastInteractionCompleted.Invoke();
             }
         }
+
+        InteractionCompleted?.Invoke();
 
         //AfterCompleteInteraction();
         if (WasFullyInteracted)
