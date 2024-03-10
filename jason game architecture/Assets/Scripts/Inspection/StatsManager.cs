@@ -6,6 +6,7 @@ using UnityEngine;
 internal class StatsManager : MonoBehaviour
 {
     public static StatsManager Instance { get; private set; }
+    public bool Bound { get; private set; }
 
     [SerializeField] Stat[] allStats;
     Dictionary<Stat, StatData> myStats = new Dictionary<Stat, StatData>();
@@ -48,6 +49,8 @@ internal class StatsManager : MonoBehaviour
                 myStats[stat] = statData;
             }
         }
+
+        Bound = true;
     }
 
     public void Modify(Stat stat, int amount)
@@ -56,5 +59,10 @@ internal class StatsManager : MonoBehaviour
         {
             statData.Value += amount;
         }
+    }
+
+    public IEnumerable<StatData> GetAll()
+    {
+        return myStats.Values;
     }
 }
