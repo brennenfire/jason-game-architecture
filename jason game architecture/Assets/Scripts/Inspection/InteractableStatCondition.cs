@@ -8,7 +8,9 @@ public class InteractableStatCondition : MonoBehaviour, IMet
     [SerializeField] Stat requiredStat;
     [SerializeField] bool skillupOnInteractionComplete = true;
     Interactable interactable;
-    
+
+    public string NotMetMessage => $"<color=red>{requiredStat} ({requiredStatValue})</color>";
+
     void Awake()
     {
         interactable = GetComponent<Interactable>();

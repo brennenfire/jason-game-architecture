@@ -35,13 +35,16 @@ public class Interactable : MonoBehaviour
     public float InteractionProgress => data?.TimeInteracted ?? 0f / timeToInteract;
 
     public bool WasFullyInteracted => InteractionProgress >= 1;
-     
-    public bool MeetsConditions()
+
+    public string ConditionMessage { get; private set; }
+
+    public bool CheckConditions()
     {
         foreach(var condition in allConditions) 
         {
             if(condition.Met() == false)
             {
+                ConditionMessage = condition.NotMetMessage;
                 return false;
             }
 
@@ -90,7 +93,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && WasFullyInteracted == false && MeetsConditions() == true)
+        if(other.CompareTag("Player") && WasFullyInteracted == false)
         {
             interactablesInRange.Add(this);
             InteractablesInRangeChanged?.Invoke(true);

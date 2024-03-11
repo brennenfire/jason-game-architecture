@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class InteractionPanel : MonoBehaviour
 {
+    [SerializeField] TMP_Text conditionText;
     [SerializeField] TMP_Text beforeText;
     [SerializeField] TMP_Text duringText;
     [SerializeField] TMP_Text completedText;
@@ -24,8 +25,9 @@ public class InteractionPanel : MonoBehaviour
 
     void UpdateInteractionText(Interactable interactable)
     {
-        if(interactable == null ) 
+        if(interactable == null) 
         {
+            conditionText.enabled = false;
             beforeText.enabled = false;
         }
         else
@@ -34,6 +36,8 @@ public class InteractionPanel : MonoBehaviour
             beforeText.SetText($"{interactionType.Hotkey} - {interactionType.BeforeInteraction}");
             beforeText.enabled = true;
             duringText.SetText(interactionType.DuringInteraction);
+            conditionText.enabled = true;
+            conditionText.SetText(interactable.ConditionMessage);
         }
     }
 

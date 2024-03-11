@@ -31,12 +31,19 @@ public class InteractionManager : MonoBehaviour
             FirstOrDefault();
 
         currentInteractable = nearest;
+        currentInteractable?.CheckConditions();
         CurrentInteractableChanged.Invoke(currentInteractable);
     }
 
     void Update()
     {
-        if(currentInteractable != null && Input.GetKey(currentInteractable.InteractionType.Hotkey))
+        if(currentInteractable == null && currentInteractable.CheckConditions() == false)
+        {
+            Interacting = false;
+            return;
+        }
+
+        if(Input.GetKey(currentInteractable.InteractionType.Hotkey))
         {
             currentInteractable.Interact();
             Interacting = true;
