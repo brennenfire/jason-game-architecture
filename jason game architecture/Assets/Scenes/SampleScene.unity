@@ -11983,7 +11983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5207c18467442345a4c7e0af86aa45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredStatValue: 10
+  requiredStatValue: 3
   requiredStat: {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
   skillupOnInteractionComplete: 1
 --- !u!65 &780324544

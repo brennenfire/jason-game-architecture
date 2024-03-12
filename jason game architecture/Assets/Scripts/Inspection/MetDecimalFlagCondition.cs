@@ -6,6 +6,7 @@ public class MetDecimalFlagCondition : MonoBehaviour, IMet
     [SerializeField] decimal requiredValue;
 
     public string NotMetMessage => $"<color=red>{requiredFlag.name} ({requiredValue})</color>";
+    public string MetMessage { get; }
 
     public bool Met()
     {

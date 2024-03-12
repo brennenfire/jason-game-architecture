@@ -6,6 +6,7 @@ public class MetIntFlagCondition : MonoBehaviour, IMet
     [SerializeField] int requiredValue;
 
     public string NotMetMessage => $"<color=red>{requiredFlag.name}</color>";
+    public string MetMessage { get; }
 
     public bool Met()
     {

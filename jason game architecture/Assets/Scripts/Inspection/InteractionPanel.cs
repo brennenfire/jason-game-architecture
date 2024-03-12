@@ -18,6 +18,7 @@ public class InteractionPanel : MonoBehaviour
     {
         beforeText.enabled = false;
         completedText.enabled = false;
+        conditionText.enabled = false;
         //Interactable.InteractablesInRangeChanged += UpdateHintTextState;
         FindObjectOfType<InteractionManager>().CurrentInteractableChanged += UpdateInteractionText;
         Interactable.AnyInteractionComplete += ShowCompletedInspectionText;
@@ -34,7 +35,7 @@ public class InteractionPanel : MonoBehaviour
         {
             var interactionType = interactable.InteractionType;
             beforeText.SetText($"{interactionType.Hotkey} - {interactionType.BeforeInteraction}");
-            beforeText.enabled = true;
+            beforeText.enabled = interactable.CheckConditions();
             duringText.SetText(interactionType.DuringInteraction);
             conditionText.enabled = true;
             conditionText.SetText(interactable.ConditionMessage);

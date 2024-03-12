@@ -5,6 +5,7 @@ internal class MetInspectedConditionsBase : MonoBehaviour, IMet
     [SerializeField] Interactable requiredInspectable;
 
     public string NotMetMessage { get; }
+    public string MetMessage { get; }
 
     public bool Met()
     {
