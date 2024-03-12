@@ -9,9 +9,9 @@ public class InteractableStatCondition : MonoBehaviour, IMet
     [SerializeField] bool skillupOnInteractionComplete = true;
     Interactable interactable;
 
-    public string NotMetMessage => $"<color=red>{requiredStat} ({requiredStatValue})</color>";
+    public string NotMetMessage => $"<color=red>{requiredStat.name} ({requiredStatValue})</color>";
 
-    public string MetMessage => $"<color=green>{requiredStat} ({requiredStatValue})</color>";
+    public string MetMessage => $"<color=green>{requiredStat.name} ({requiredStatValue})</color>";
 
     void Awake()
     {
