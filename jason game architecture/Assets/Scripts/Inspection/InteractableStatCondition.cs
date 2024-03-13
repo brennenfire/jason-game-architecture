@@ -9,14 +9,16 @@ public class InteractableStatCondition : MonoBehaviour, IMet
     [SerializeField] bool skillupOnInteractionComplete = true;
     Interactable interactable;
 
-    public string NotMetMessage => $"<color=red>{requiredStat.name} ({requiredStatValue})</color>";
+    public string NotMetMessage { get; private set; }
 
-    public string MetMessage => $"<color=green>{requiredStat.name} ({requiredStatValue})</color>";
+    public string MetMessage { get; private set; }
 
     void Awake()
     {
         interactable = GetComponent<Interactable>();
         interactable.InteractionCompleted += HandleInteractionCompleted;
+        NotMetMessage = $"<color=red>{requiredStat.name} ({requiredStatValue})</color>";
+        MetMessage = $"<color=green>{requiredStat.name} ({requiredStatValue})</color>";
     }
 
     void OnDestroy()

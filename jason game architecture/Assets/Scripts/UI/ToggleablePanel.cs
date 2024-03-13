@@ -10,7 +10,7 @@ public class ToggleablePanel : MonoBehaviour
     static HashSet<ToggleablePanel> visiblePanels = new HashSet<ToggleablePanel>();
 
     public static bool AnyVisible => visiblePanels.Any();
-    bool IsVisible => canvasGroup.alpha > 0;
+    public bool IsVisible => canvasGroup.alpha > 0;
 
     [SerializeField] KeyCode Hotkey;
 
