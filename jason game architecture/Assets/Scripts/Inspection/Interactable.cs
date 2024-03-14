@@ -37,6 +37,17 @@ public class Interactable : MonoBehaviour
     public bool WasFullyInteracted => InteractionProgress >= 1;
 
     public string ConditionMessage { get; private set; }
+    public string Key
+    {
+        get
+        {
+            if(transform.root == transform)
+            {
+                return name;
+            }
+            return transform.root.name + " - " + name;
+        }
+    }
 
     public bool CheckConditions()
     {

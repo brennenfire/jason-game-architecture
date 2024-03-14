@@ -5,6 +5,6 @@
 public class InteractableData
 {
     public float TimeInteracted;
-    public string Name;
+    public string Key;
     public int interactionCount;
 }
