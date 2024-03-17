@@ -19,6 +19,11 @@ public class PlacementManager : MonoBehaviour
 
     public static PlacementManager Instance { get; private set; }
 
+    void Awake()
+    {
+        Instance = this;
+    }
+
     public void BeginPlacement(ItemSlot itemSlot)
     {
         if(itemSlot == null || itemSlot.Item == null || itemSlot.Item.PlaceablePrefab == null)
@@ -33,11 +38,6 @@ public class PlacementManager : MonoBehaviour
 
         placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
         placeable.transform.SetParent(transform);
-    }
-
-    void Awake()
-    {
-        Instance = this;        
     }
 
     void Update()

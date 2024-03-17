@@ -8,8 +8,8 @@ public class Placeable : MonoBehaviour
     [SerializeField] GameObject previewObject;
     [SerializeField] GameObject placedObject;
     [SerializeField] List<Renderer> tintedRenderers;
-    [SerializeField] Color defaultColor;
-    [SerializeField] Color invalidColor;
+    [SerializeField] Color defaultColor = Color.white;
+    [SerializeField] Color invalidColor = Color.red;
     IValidatePlacement[] validators;
 
     public bool IsPlacementValid { get; private set; }
