@@ -25,4 +25,9 @@ public class UniqueKey : MonoBehaviour
         }
         usedIs.Add(Id, this);
     }
+
+    public void GenerateRuntimePlacedKey()
+    {
+        Id = Guid.NewGuid().ToString();
+    }
 }

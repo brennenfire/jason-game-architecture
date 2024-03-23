@@ -37,6 +37,8 @@ public class PlacementManager : MonoBehaviour
         Debug.Log($"started placing {itemSlotLocal.Item}");
 
         placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
+        var uniqueKey = placeable.GetComponent<UniqueKey>();
+        uniqueKey.GenerateRuntimePlacedKey();
         placeable.transform.SetParent(transform);
     }
 
@@ -63,11 +65,14 @@ public class PlacementManager : MonoBehaviour
 
     void FinishPlacement()
     {
+        var uniqueKey = placeable.GetComponent<UniqueKey>();
+        
         localPlaceableDatas.Add(new PlaceableData()
         {
             PlaceablePrefab = itemSlotLocal.Item.PlaceablePrefab.name,
             Position = placeable.transform.position,
-            Rotation = placeable.transform.rotation
+            Rotation = placeable.transform.rotation,
+            Key = uniqueKey.Id
         });
 
         placeable.Place();
@@ -89,6 +94,7 @@ public class PlacementManager : MonoBehaviour
                 if (placeable != null)
                 {
                     placeable.Place();
+                    placeable.GetComponent<UniqueKey>().Id = placeableData.Key;
                 }
             }
             else
