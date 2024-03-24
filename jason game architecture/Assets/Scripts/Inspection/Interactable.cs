@@ -46,7 +46,7 @@ public class Interactable : MonoBehaviour
             {
                 return uniqueKey.Id + " - " + name;
             }
-            return transform.root.name + " - " + name;
+            return "ERROR- " + transform.root.name + " - " + name;
         }
     }
 

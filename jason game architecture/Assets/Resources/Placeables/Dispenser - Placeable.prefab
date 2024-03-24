@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c43407bbfff1c49a86fb441657aa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 4fe6b370-7b6a-4fc7-88f4-de2331f09458
+  Id: c2bdb9b2-c9fb-4218-888d-e19f6e8cfc58
 --- !u!1001 &397896382679207015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,8 +496,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4387248715892275721, guid: e976cf01725cb754b96ceac1204683e5, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

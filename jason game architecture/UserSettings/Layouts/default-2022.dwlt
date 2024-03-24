@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1535
     height: 925
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 51
+  controlID: 107
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -413,8 +413,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: 90faffff
+      m_LastClickedID: -1392
       m_ExpandedIDs: 0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -743,9 +743,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 15.474454, y: 4.0512958, z: 0.88297415}
+    m_Target: {x: 18.73189, y: 2.9344246, z: 0.97449535}
     speed: 2
-    m_Value: {x: 15.474454, y: 4.0512958, z: 0.88297415}
+    m_Value: {x: 18.73189, y: 2.9344246, z: 0.97449535}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -791,13 +791,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.012802692, y: 0.24059258, z: 0.0031744821, w: 0.97054946}
+    m_Target: {x: 0.08223386, y: 0.37315637, z: -0.033229753, w: 0.9235361}
     speed: 2
-    m_Value: {x: 0.012802693, y: -0.24059258, z: -0.0031744824, w: -0.9705495}
+    m_Value: {x: 0.08223258, y: 0.37315053, z: -0.033229236, w: 0.9235217}
   m_Size:
-    m_Target: 5.013922
+    m_Target: 7.101454
     speed: 2
-    m_Value: 5.013922
+    m_Value: 7.101454
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Items
+    - Assets/Scripts/Placeable
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -962,16 +962,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Items
+  - Assets/Scripts/Placeable
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\unity projects\jason architecture\jason game architecture
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 459}
-    m_SelectedIDs: 826e0000
-    m_LastClickedID: 28290
-    m_ExpandedIDs: 00000000246e0000266e0000286e00002a6e00002c6e00002e6e0000306e0000326e0000346e0000366e0000386e00003a6e000000ca9a3b
+    scrollPos: {x: 0, y: 283}
+    m_SelectedIDs: 9e6e0000
+    m_LastClickedID: 28318
+    m_ExpandedIDs: 00000000246e0000266e0000286e00002c6e00002e6e0000306e0000326e0000346e0000366e0000386e00003a6e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1026,22 +1026,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003c5a0000ce650000ce6b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Dispenser - Placeable
+      m_OriginalName: Dispenser - Placeable
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 26568
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -5952
+  m_LastSelectedObjectID: -1392
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
