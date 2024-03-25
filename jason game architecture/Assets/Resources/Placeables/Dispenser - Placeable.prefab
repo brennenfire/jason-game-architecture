@@ -300,7 +300,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad0a9f1eea94272439c7f1d20d8447ab, type: 2}
+  - {fileID: 2100000, guid: 39ecc3cf0d425a24dadd7d89b64ef4a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c43407bbfff1c49a86fb441657aa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: c2bdb9b2-c9fb-4218-888d-e19f6e8cfc58
+  Id: d417b952-bbb1-4834-be28-017ec4557da1
 --- !u!1001 &397896382679207015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,6 +467,10 @@ PrefabInstance:
     - target: {fileID: 5230080685990274303, guid: e976cf01725cb754b96ceac1204683e5, type: 3}
       propertyPath: m_Name
       value: Dispenser - Placed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230080685990274303, guid: e976cf01725cb754b96ceac1204683e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580490419895361742, guid: e976cf01725cb754b96ceac1204683e5, type: 3}
       propertyPath: m_LocalPosition.x
