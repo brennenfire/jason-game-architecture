@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7580490419895361742}
   - component: {fileID: 4489634256012366723}
   - component: {fileID: 6070721533598809755}
+  - component: {fileID: 5916395086423927676}
   m_Layer: 0
   m_Name: DispenseInteraction
   m_TagString: Untagged
@@ -50,9 +51,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: AddItemFromEvent
+      - m_Target: {fileID: 5916395086423927676}
+        m_TargetAssemblyTypeName: GiveItemInteraction, Assembly-CSharp
+        m_MethodName: GiveItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 6b2d137f957736c46b484b4c66afb87c, type: 2}
@@ -126,6 +127,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5916395086423927676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886653658281965128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ea3d4d9a9a99468a434695b3ac2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5230080685990274303
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &121325576386708007
 Transform:
   m_ObjectHideFlags: 0
@@ -172,13 +185,14 @@ GameObject:
   - component: {fileID: 5890356838765397801}
   - component: {fileID: 5494253740798768847}
   - component: {fileID: 5432325783502784088}
+  - component: {fileID: 8942583851411778819}
   m_Layer: 0
   m_Name: SalvageInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2915161155107048397
 Transform:
   m_ObjectHideFlags: 0
@@ -211,12 +225,12 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8942583851411778819}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: AddItemFromEvent
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: e1eb2916f25c6fc48a55cfa124112972, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -226,18 +240,6 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: test2
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 5230080685990274303}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -290,6 +292,18 @@ MonoBehaviour:
   requiredStatValue: 3
   requiredStat: {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
   skillupOnInteractionComplete: 1
+--- !u!114 &8942583851411778819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7936008920960168872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ea3d4d9a9a99468a434695b3ac2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3650017201984672726
 PrefabInstance:
   m_ObjectHideFlags: 0

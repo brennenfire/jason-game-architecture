@@ -16,7 +16,9 @@ public class Placeable : MonoBehaviour
 
     void Awake()
     {
-        validators = GetComponents<IValidatePlacement>();    
+        validators = GetComponents<IValidatePlacement>();
+        previewObject.SetActive(true);
+        placedObject.SetActive(false);
     }
 
     public void Place()
