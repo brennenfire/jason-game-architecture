@@ -55,7 +55,8 @@ public class PlacementManager : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, layerMask, QueryTriggerInteraction.Ignore))
         {
-            placeable.SetPosition(hitInfo.point);
+            var orientation = Quaternion.LookRotation(hitInfo.normal, Vector3.up);
+            placeable.SetPositionAndValidate(hitInfo.point, orientation);
             if(Input.GetMouseButtonDown(0) && placeable.IsPlacementValid)
             {
                 FinishPlacement();

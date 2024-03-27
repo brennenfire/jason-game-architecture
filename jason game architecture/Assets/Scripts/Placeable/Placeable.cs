@@ -27,9 +27,9 @@ public class Placeable : MonoBehaviour
         placedObject.SetActive(true);
     }
 
-    public void SetPosition(Vector3 point)
+    public void SetPositionAndValidate(Vector3 point, Quaternion orientation)
     {
-        transform.position = point; 
+        transform.SetPositionAndRotation(point, orientation);
         IsPlacementValid = true;
 
         foreach (var validator in validators)
