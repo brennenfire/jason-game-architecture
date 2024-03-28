@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
@@ -37,7 +38,9 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
-        if(currentInteractable == null && currentInteractable.CheckConditions() == false)
+        if(currentInteractable == null 
+           || currentInteractable.IsSceneBound() == false 
+           || currentInteractable.CheckConditions() == false)
         {
             Interacting = false;
             return;

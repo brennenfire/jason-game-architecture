@@ -218,4 +218,6 @@ public class Interactable : MonoBehaviour
             OnLastInteractionCompleted?.Invoke();
         }
     }
+
+    public bool IsBound() => data != null;
 }
