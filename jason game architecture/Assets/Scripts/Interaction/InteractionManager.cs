@@ -39,7 +39,7 @@ public class InteractionManager : MonoBehaviour
     void Update()
     {
         if(currentInteractable == null 
-           || currentInteractable.IsSceneBound() == false 
+           || currentInteractable.IsBound() == false 
            || currentInteractable.CheckConditions() == false)
         {
             Interacting = false;
