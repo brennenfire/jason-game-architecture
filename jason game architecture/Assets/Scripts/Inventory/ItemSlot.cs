@@ -7,8 +7,19 @@ public class ItemSlot
 {
     public event Action Changed;
 
+    public readonly EquipmentSlotType EquipmentSlotType;
     public Item Item;
     SlotData slotDataLocal;
+
+    public ItemSlot()
+    {
+
+    }
+
+    public ItemSlot(EquipmentSlotType equipmentSlotType)
+    {
+        EquipmentSlotType = equipmentSlotType;
+    }
 
     public bool IsEmpty => Item == null;
 

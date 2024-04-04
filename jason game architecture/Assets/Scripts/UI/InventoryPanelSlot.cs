@@ -21,7 +21,10 @@ public class InventoryPanelSlot : MonoBehaviour,
     [SerializeField] Outline outline;
     [SerializeField] Color draggingColor = Color.gray;
     [SerializeField] TMP_Text stackCountText;
-     
+    [SerializeField] EquipmentSlotType equipmentSlotType;
+
+    public EquipmentSlotType EquipmentSlotType => equipmentSlotType;
+
     public void Bind(ItemSlot itemSlot)
     {
         itemSlotLocal = itemSlot;

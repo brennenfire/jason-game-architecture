@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class CraftingPanel : ToggleablePanel
+﻿public class EquipmentPanel : ToggleablePanel
 {
     void Start()
     {
@@ -10,9 +8,10 @@ public class CraftingPanel : ToggleablePanel
     public void Bind(Inventory inventory)
     {
         var panelSlots = GetComponentsInChildren<InventoryPanelSlot>();
-        for (int i = 0; i < panelSlots.Length; i++)
+        foreach (var panelSlot in panelSlots)
         {
-            panelSlots[i].Bind(inventory.CraftingSlots[i]);
+
+            panelSlot.Bind(inventory.GetEquipmentSlots(panelSlot.EquipmentSlotType));
         }
     }
 }
