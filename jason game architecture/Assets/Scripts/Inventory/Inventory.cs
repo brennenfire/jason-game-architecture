@@ -140,8 +140,9 @@ public class Inventory : MonoBehaviour
     {
         localSlotDatas = slotDatas;
 
-        BindSlots(slotDatas, GeneralSlots, "General");
-        BindSlots(slotDatas, CraftingSlots, "Crafting");
+        BindToSlots(slotDatas, GeneralSlots, "General");
+        BindToSlots(slotDatas, CraftingSlots, "Crafting");
+        BindToSlots(slotDatas, EquipmentSlots, "Equipment");
 
         var overflowSlotDatas = slotDatas.Where(t => t.SlotName.StartsWith("Overflow") 
                                                      && String.IsNullOrWhiteSpace(t.ItemName) == false).ToList();
@@ -164,15 +165,16 @@ public class Inventory : MonoBehaviour
 
     }
 
-    static void BindSlots(List<SlotData> slotDatas, ItemSlot[] slots, string slotName)
+    static void BindToSlots(List<SlotData> slotDatas, IEnumerable<ItemSlot> slots, string slotName)
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Count(); i++)
         {
-            var slot = slots[i];
-            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == slotName + i);
+            var slot = slots.ElementAt(i);
+            string name = slot.EquipmentSlotType != null ? slot.EquipmentSlotType.name : slotName + i;
+            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == name);
             if (slotData == null)
             {
-                slotData = new SlotData() { SlotName = slotName + i };
+                slotData = new SlotData() { SlotName = name };
                 slotDatas.Add(slotData);
             }
 
