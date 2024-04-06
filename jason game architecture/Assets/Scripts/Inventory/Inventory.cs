@@ -144,6 +144,8 @@ public class Inventory : MonoBehaviour
         BindToSlots(slotDatas, CraftingSlots, "Crafting");
         BindToSlots(slotDatas, EquipmentSlots, "Equipment");
 
+        slotDatas.RemoveAll(t => t.SlotName.StartsWith("Overflow")
+                                                     && String.IsNullOrWhiteSpace(t.ItemName));
         var overflowSlotDatas = slotDatas.Where(t => t.SlotName.StartsWith("Overflow") 
                                                      && String.IsNullOrWhiteSpace(t.ItemName) == false).ToList();
 
@@ -152,6 +154,11 @@ public class Inventory : MonoBehaviour
             var itemSlot = new ItemSlot();
             itemSlot.Bind(overflowSlotData);
             OverflowSlots.Add(itemSlot);
+        }
+        
+        if(TopOverflowSlot == null && TopOverflowSlot.IsEmpty == false)
+        {
+
         }
 
         CreateOverflowSlot();
