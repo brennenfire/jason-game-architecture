@@ -218,6 +218,12 @@ public class Inventory : MonoBehaviour
 
     public void Swap(ItemSlot sourceSlot, ItemSlot focusedSlot)
     {
+        if(!sourceSlot.CanHold(focusedSlot.Item) && focusedSlot.CanHold(sourceSlot.Item))
+        {
+            Debug.LogWarning("unable to swap items");
+            return;
+        }
+
         if (focusedSlot == TopOverflowSlot)
         {
             Debug.LogError("overflow slot cant :P");
