@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RedArms
   m_EditorClassIdentifier: 
   EquipmentSlotType: {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
+  EquipMaterial: {fileID: 2100000, guid: 8fc80726ea71d6a4b915c80987170bfc, type: 2}
   Icon: {fileID: 21300000, guid: f6c90420fa2d74347ad88f75ee4c3d09, type: 3}
   Name: 
   Description: 
