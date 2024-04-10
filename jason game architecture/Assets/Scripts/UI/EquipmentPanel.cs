@@ -1,4 +1,6 @@
-﻿public class EquipmentPanel : ToggleablePanel
+﻿using Microsoft.Unity.VisualStudio.Editor;
+
+public class EquipmentPanel : ToggleablePanel
 {
     void Start()
     {
@@ -10,7 +12,6 @@
         var panelSlots = GetComponentsInChildren<InventoryPanelSlot>();
         foreach (var panelSlot in panelSlots)
         {
-
             panelSlot.Bind(inventory.GetEquipmentSlots(panelSlot.EquipmentSlotType));
         }
     }

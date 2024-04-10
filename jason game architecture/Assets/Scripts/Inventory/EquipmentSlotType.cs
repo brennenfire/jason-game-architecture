@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "equipment slot type")]
 public class EquipmentSlotType : ScriptableObject
 {
-
+    [SerializeField] public Sprite DefaultSprite;
 }
