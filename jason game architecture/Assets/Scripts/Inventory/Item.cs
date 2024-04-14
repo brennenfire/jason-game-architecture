@@ -10,6 +10,7 @@ public class Item : ScriptableObject
 
     public Sprite Icon;
     public string Name;
+    public string ModelName;
 
     [Multiline(3)]
     public string Description;
@@ -17,7 +18,6 @@ public class Item : ScriptableObject
     public int MaxStackSize;
 
     public Placeable PlaceablePrefab;
-    
 
     [ContextMenu("Add 1")] public void Add1() => Inventory.Instance.AddItem(this);
    [ContextMenu("Add 5")] public void Add5() { for (int i = 0; i < 5; i++) { Inventory.Instance.AddItem(this); } }

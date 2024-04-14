@@ -29,6 +29,16 @@ public class EquipmentVisuals : MonoBehaviour
             {
                 skinnedMeshRenderer.material = slot.Item?.EquipMaterial ?? visual.DefaultMaterial;
             }
+
+            if(visual.VisualModelRoot != null) 
+            {
+                for (int i = 0; i < visual.VisualModelRoot.childCount; i++)
+                {
+                    var model = visual.VisualModelRoot.GetChild(i);
+                    model.gameObject.SetActive(model.name == slot.Item?.ModelName);
+                }
+            }
+
         }    
     }
 }
@@ -41,4 +51,5 @@ public class EquipmentVisual
     public EquipmentSlotType EquipmentSlotType;
     public List<SkinnedMeshRenderer> SkinnedMeshRenderers;
     public Material DefaultMaterial;
+    public Transform VisualModelRoot;
 }
