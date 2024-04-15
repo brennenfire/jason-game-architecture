@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class ThirdPersonMover : MonoBehaviour
 {
     [SerializeField] float turnSpeed = 1000;
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] Stat moveSpeed;
     float mouseMovement;
     new Rigidbody rigidbody;
     Animator animator;
@@ -43,7 +43,7 @@ public class ThirdPersonMover : MonoBehaviour
         }
 
         var velocity = new Vector3(horizontal, 0, vertical);
-        velocity *= moveSpeed * Time.fixedDeltaTime;
+        velocity *= StatsManager.Instance.GetStatValue(moveSpeed) * Time.fixedDeltaTime;
         var offset = transform.rotation * velocity;
 
         rigidbody.MovePosition(transform.position + offset);

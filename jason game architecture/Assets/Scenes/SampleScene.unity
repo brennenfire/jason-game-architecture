@@ -7579,6 +7579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allStats:
+  - {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
   - {fileID: 11400000, guid: 26ac01c49fbf3fa4f9bbd727d74f8376, type: 2}
   - {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
 --- !u!1001 &591605482
@@ -8946,7 +8947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 1000
-  moveSpeed: 5
+  moveSpeed: {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
 --- !u!136 &816135556
 CapsuleCollider:
   m_ObjectHideFlags: 0
