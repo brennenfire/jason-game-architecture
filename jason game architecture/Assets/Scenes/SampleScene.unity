@@ -20691,7 +20691,7 @@ GameObject:
   - component: {fileID: 1669506539}
   - component: {fileID: 1669506543}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: StatEffectArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20795,8 +20795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f998237a9665244a2c35a6c7896f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
-  amount: -7
+  statMods:
+  - Value: -8
+    StatType: {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
 --- !u!1 &1685362099
 GameObject:
   m_ObjectHideFlags: 0

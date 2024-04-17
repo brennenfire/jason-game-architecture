@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 279
     height: 525
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -413,8 +413,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6cf0ffff
-      m_LastClickedID: 0
+      m_SelectedIDs: e6f1ffff
+      m_LastClickedID: -3610
       m_ExpandedIDs: 0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -756,9 +756,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.187842, y: 1.252612, z: 5.01897}
+    m_Target: {x: 7.324774, y: 1.7776747, z: 5.9650393}
     speed: 2
-    m_Value: {x: 13.187842, y: 1.252612, z: 5.01897}
+    m_Value: {x: 7.324774, y: 1.7776747, z: 5.9650393}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -804,13 +804,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.008056159, y: 0.98151165, z: -0.18653448, w: -0.04242728}
+    m_Target: {x: -0.11495806, y: 0.44919568, z: -0.05841716, w: -0.8840924}
     speed: 2
-    m_Value: {x: -0.008056058, y: 0.98149925, z: -0.18653212, w: -0.042426743}
+    m_Value: {x: -0.11495668, y: 0.4491903, z: -0.058416456, w: -0.8840817}
   m_Size:
-    m_Target: 0.8784943
+    m_Target: 1.5318211
     speed: 2
-    m_Value: 0.8784943
+    m_Value: 1.5318211
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Stats
+    - Assets/Scripts/Stats
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -975,16 +975,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets/Resources/Stats
+  - Assets/Scripts/Stats
   m_LastFoldersGridSize: 46
   m_LastProjectPath: D:\unity projects\jason architecture\jason game architecture
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 343}
-    m_SelectedIDs: 706d0000
-    m_LastClickedID: 28016
-    m_ExpandedIDs: 000000000e6d0000106d0000126d0000146d0000166d0000186d00001a6d00001c6d00001e6d0000206d0000226d000000ca9a3b
+    scrollPos: {x: 0, y: 287}
+    m_SelectedIDs: f47c0000
+    m_LastClickedID: 31988
+    m_ExpandedIDs: 00000000106d0000126d0000166d0000186d00001a6d00001c6d00001e6d0000206d0000226d0000786d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1012,7 +1012,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000e6d0000106d0000126d0000146d0000166d0000186d00001a6d00001c6d00001e6d0000206d0000226d0000
+    m_ExpandedIDs: 00000000106d0000126d0000146d0000166d0000186d00001a6d00001c6d00001e6d0000206d0000226d0000246d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1138,7 +1138,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 25502
+  m_LastSelectedObjectID: -3610
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
