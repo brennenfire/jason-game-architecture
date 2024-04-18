@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MoveSpeed
   m_EditorClassIdentifier: 
   DefaultValue: 10
+  MinimumValue: 1

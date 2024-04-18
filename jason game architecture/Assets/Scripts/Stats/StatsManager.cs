@@ -25,17 +25,22 @@ internal class StatsManager : MonoBehaviour
 
     public int GetStatValue(Stat stat)
     {
+        var totalValue = 0;
         int modValue = 0;
         if (myStatMods.ContainsKey(stat))
         {
             modValue = myStatMods[stat].Sum(t => t.Value);
         }
-        if (myStatDatas.TryGetValue(stat, out var statData)) ;
+        if (myStatDatas.TryGetValue(stat, out var statData))
         {
-            return statData.Value + modValue;
+            totalValue = statData.Value + modValue +stat.DefaultValue;
+        }
+        else
+        {
+            totalValue = modValue + stat.DefaultValue;
         }
 
-        return modValue;
+        return Math.Max(totalValue, stat.MinimumValue);
     }
 
     public void Bind(List<StatData> statDatas)
@@ -50,7 +55,7 @@ internal class StatsManager : MonoBehaviour
             }
             else
             {
-                var statData = new StatData { Value = stat.DefaultValue, Name = stat.name };
+                var statData = new StatData { Value = 0, Name = stat.name };
                 localStatDatas.Add(statData);
                 myStatDatas[stat] = statData;
             }
