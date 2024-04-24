@@ -8,7 +8,7 @@ public class StatEntry : MonoBehaviour
     [SerializeField] TMP_Text nameLocal;
     [SerializeField] TMP_Text value;
 
-    StatData statDataLocal;
+    Stat statLocal;
     ToggleablePanel toggleablePanel;
 
     void Awake()
@@ -16,17 +16,17 @@ public class StatEntry : MonoBehaviour
         toggleablePanel = GetComponentInParent<ToggleablePanel>();
     }
 
-    public void Bind(StatData statData)
+    public void Bind(Stat statData)
     {
-        statDataLocal = statData;
-        nameLocal.SetText(statDataLocal.Name);
+        statLocal = statData;
+        nameLocal.SetText(statLocal.Name);
     }
 
     void Update()
     {
         if(toggleablePanel.IsVisible) 
         {
-            value.SetText(statDataLocal.Value.ToString());
+            value.SetText(statLocal.GetValue().ToString());
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class ThirdPersonMover : MonoBehaviour
 {
     [SerializeField] float turnSpeed = 1000;
-    [SerializeField] Stat moveSpeed;
+    [SerializeField] StatType moveSpeed;
     float mouseMovement;
     new Rigidbody rigidbody;
     Animator animator;
@@ -25,12 +25,12 @@ public class ThirdPersonMover : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(ToggleablePanel.AnyVisible) 
-        {
-            animator.SetFloat("Vertical", 0f, 0.1f, Time.deltaTime);
-            animator.SetFloat("Horizontal", 0f, 0.1f, Time.deltaTime);
-            return;
-        }
+        //if(ToggleablePanel.AnyVisible) 
+        //{
+        //    animator.SetFloat("Vertical", 0f, 0.1f, Time.deltaTime);
+        //    animator.SetFloat("Horizontal", 0f, 0.1f, Time.deltaTime);
+        //    return;
+        //}
 
         transform.Rotate(0, mouseMovement * Time.deltaTime * turnSpeed, 0);
 

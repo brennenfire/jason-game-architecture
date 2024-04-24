@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractableStatCondition : MonoBehaviour, IMet
 {
     [SerializeField] int requiredStatValue;
-    [SerializeField] Stat requiredStat;
+    [SerializeField] StatType requiredStat;
     [SerializeField] bool skillupOnInteractionComplete = true;
     Interactable interactable;
 
