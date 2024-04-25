@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -21,17 +22,41 @@ public class StatsManager : MonoBehaviour
         Instance = this;
     }
 
-    public int GetStatValue(StatType statType)
+    void Start()
     {
-        Stat stat = GetStat(statType);
-        return stat.GetValue();
-        
+        foreach (var slot in Inventory.Instance.EquipmentSlots)
+        {
+            slot.Changed += HandleEquipSlotChanged;
+        }
     }
 
-    Stat GetStat(StatType statType)
+    void HandleEquipSlotChanged(Item added, Item removed)
     {
-        return stats[statType];
+        if (added == removed)
+        {
+            return;
+        }
+
+        if (removed)
+        {
+            foreach (var statMod in removed.StatMods)
+            {
+                GetStat(statMod.StatType).RemoveStatMod(statMod);
+            }
+        }
+
+        if (added)
+        {
+            foreach (var statMod in added.StatMods)
+            {
+                GetStat(statMod.StatType).AddStatMod(statMod);
+            }
+        }
     }
+
+    public int GetStatValue(StatType statType) => GetStat(statType).GetValue();
+
+    Stat GetStat(StatType statType) => stats[statType];
 
     public void Bind(List<StatData> statDatas)
     {
@@ -39,7 +64,7 @@ public class StatsManager : MonoBehaviour
         foreach (var statType in allStatTypes)
         {
             var data = localStatDatas.FirstOrDefault(t => t.Name == statType.name);
-            if(data == null)
+            if (data == null)
             {
                 var statData = new StatData { Value = 0, Name = statType.name };
                 localStatDatas.Add(statData);
@@ -51,15 +76,9 @@ public class StatsManager : MonoBehaviour
         Bound = true;
     }
 
-    public void Modify(StatType statType, int amount)
-    {
-        GetStat(statType).ModifyStatData(amount);
-    }
+    public void Modify(StatType statType, int amount) => GetStat(statType).ModifyStatData(amount);
 
-    public IEnumerable<Stat> GetAll()
-    {
-        return stats.Values;
-    }
+    public IEnumerable<Stat> GetAll() => stats.Values;
 
     public void AddStatMods(List<StatMod> statMods)
     {

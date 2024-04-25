@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
-    public event Action Changed;
+    public event Action<Item, Item> Changed;
 
     public readonly EquipmentSlotType EquipmentSlotType;
     public Item Item;
@@ -31,20 +31,22 @@ public class ItemSlot
 
     public void SetItem(Item item, int stackCount = 1)
     {
+        var previousItem = Item; 
         Item = item;
         slotDataLocal.ItemName = item?.name ?? string.Empty;
         slotDataLocal.StackCount = stackCount;
 
-        Changed?.Invoke();
+        Changed?.Invoke(Item, previousItem);
         
     }
 
     public void Bind(SlotData slotData)
     {
+        var previousItem = Item;
         slotDataLocal = slotData;
         var item = Resources.Load<Item>("Items/" + slotDataLocal.ItemName);
         Item = item;
-        Changed?.Invoke();
+        Changed?.Invoke(Item, previousItem);
     }
 
     public void Swap(ItemSlot slotToSwap)
@@ -69,7 +71,7 @@ public class ItemSlot
         }
         else
         {
-            Changed?.Invoke();
+            Changed?.Invoke(Item, Item);
         }
     }
 

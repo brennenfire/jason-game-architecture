@@ -16,7 +16,7 @@ public class EquipmentVisuals : MonoBehaviour
         }
         foreach (var slot in Inventory.Instance.EquipmentSlots)
         {
-            slot.Changed += () => UpdateEquipmentVisual(slot);
+            slot.Changed += (added, removed) => UpdateEquipmentVisual(slot);
             UpdateEquipmentVisual(slot);
         }    
     }
