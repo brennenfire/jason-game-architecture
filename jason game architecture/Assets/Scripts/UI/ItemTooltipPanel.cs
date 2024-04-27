@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,7 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] TMP_Text name;
     [SerializeField] TMP_Text description;
+    [SerializeField] TMP_Text stats;
     [SerializeField] Image icon;
     [SerializeField] Button placeButton;
 
@@ -46,9 +48,28 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
             Toggle(true);
             name.SetText(item.name);
             description.SetText(item.Description);
+            stats.SetText(GetStatsText(item));
             icon.sprite = item.Icon;
             placeButton.gameObject.SetActive(item.PlaceablePrefab != null);
         }
+    }
+
+    string GetStatsText(Item item)
+    {
+        StringBuilder b = new StringBuilder();
+        foreach (var statMod in item.StatMods)
+        {
+            if (statMod.Value >= 0)
+            {
+                b.AppendLine($"+{statMod.Value} {statMod.StatType.name}");
+            }
+            else
+            {
+                b.AppendLine($"-{statMod.Value} {statMod.StatType.name}");
+            }
+        }
+
+        return b.ToString();
     }
 
     void Toggle(bool visible)
