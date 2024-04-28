@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a4a4d8c91085641bad574b3f36d6d8, type: 3}
   m_Name: RedLegs
   m_EditorClassIdentifier: 
-  EquipmentSlotType: {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
+  EquipmentSlotTypes:
+  - {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
   EquipMaterial: {fileID: 2100000, guid: 8fc80726ea71d6a4b915c80987170bfc, type: 2}
   Icon: {fileID: 21300000, guid: 668f0a63efd73924f9621b9e68ed2459, type: 3}
   Name: 
+  ModelName: 
   Description: 
   MaxStackSize: 0
   PlaceablePrefab: {fileID: 0}
+  StatMods: []

@@ -80,7 +80,7 @@ public class ItemSlot
         if(item == null) 
             return true;
 
-        if(EquipmentSlotType != null && item.EquipmentSlotType != EquipmentSlotType)
+        if(EquipmentSlotType != null && item.EquipmentSlotTypes.Contains(EquipmentSlotType) == false)
         {
             return false;
         }

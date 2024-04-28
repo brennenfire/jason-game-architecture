@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a4a4d8c91085641bad574b3f36d6d8, type: 3}
   m_Name: GreenButton
   m_EditorClassIdentifier: 
+  EquipmentSlotTypes:
+  - {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
+  EquipMaterial: {fileID: 0}
   Icon: {fileID: 127079573, guid: 831ac519a26c0604e93de9650a1ca24a, type: 3}
   Name: green
+  ModelName: 
   Description: pee pee
   MaxStackSize: 5
+  PlaceablePrefab: {fileID: 0}
+  StatMods: []

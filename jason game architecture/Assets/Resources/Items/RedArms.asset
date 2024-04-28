@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a4a4d8c91085641bad574b3f36d6d8, type: 3}
   m_Name: RedArms
   m_EditorClassIdentifier: 
-  EquipmentSlotType: {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
+  EquipmentSlotTypes:
+  - {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
+  - {fileID: 11400000, guid: ce2c019d1cd8bf64689f5a683d72b011, type: 2}
   EquipMaterial: {fileID: 2100000, guid: 8fc80726ea71d6a4b915c80987170bfc, type: 2}
   Icon: {fileID: 21300000, guid: f6c90420fa2d74347ad88f75ee4c3d09, type: 3}
   Name: 
+  ModelName: 
   Description: 
   MaxStackSize: 0
   PlaceablePrefab: {fileID: 0}
+  StatMods:
+  - Value: 3
+    StatType: {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
