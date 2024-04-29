@@ -27,6 +27,10 @@ public class StatsManager : MonoBehaviour
         foreach (var slot in Inventory.Instance.EquipmentSlots)
         {
             slot.Changed += HandleEquipSlotChanged;
+            if(slot.Item != null)
+            {
+                Add(slot.Item);
+            }
         }
     }
 
@@ -39,18 +43,28 @@ public class StatsManager : MonoBehaviour
 
         if (removed)
         {
-            foreach (var statMod in removed.StatMods)
-            {
-                GetStat(statMod.StatType).RemoveStatMod(statMod);
-            }
+            Removed(removed);
         }
 
         if (added)
         {
-            foreach (var statMod in added.StatMods)
-            {
-                GetStat(statMod.StatType).AddStatMod(statMod);
-            }
+            Add(added);
+        }
+    }
+
+    void Removed(Item removed)
+    {
+        foreach (var statMod in removed.StatMods)
+        {
+            GetStat(statMod.StatType).RemoveStatMod(statMod);
+        }
+    }
+
+    void Add(Item added)
+    {
+        foreach (var statMod in added.StatMods)
+        {
+            GetStat(statMod.StatType).AddStatMod(statMod);
         }
     }
 
