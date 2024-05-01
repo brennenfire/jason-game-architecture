@@ -26,7 +26,7 @@ public class InteractableStatCondition : MonoBehaviour, IMet
         interactable.InteractionCompleted -= HandleInteractionCompleted;
     }
 
-    private void HandleInteractionCompleted()
+    void HandleInteractionCompleted()
     {
         if(skillupOnInteractionComplete)
         {
@@ -36,7 +36,7 @@ public class InteractableStatCondition : MonoBehaviour, IMet
 
     public bool Met()
     {
-        int statValue = StatsManager.Instance.GetStatValue(requiredStat);
+        var statValue = StatsManager.Instance.GetStatValue(requiredStat);
         return statValue >= requiredStatValue;
     }
 }
