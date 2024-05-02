@@ -158,10 +158,10 @@ public class Inventory : MonoBehaviour
         
         if(TopOverflowSlot == null && TopOverflowSlot.IsEmpty == false)
         {
-
+            CreateOverflowSlot();
         }
 
-        CreateOverflowSlot();
+        //CreateOverflowSlot();
         TopOverflowSlot.Changed += (added, removed) =>
         {
             if (TopOverflowSlot.IsEmpty && OverflowSlots.Any(t => t.IsEmpty == false))
