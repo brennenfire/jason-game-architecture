@@ -80,7 +80,7 @@ public class StatsManager : MonoBehaviour
             var data = localStatDatas.FirstOrDefault(t => t.Name == statType.name);
             if (data == null)
             {
-                data = new StatData { Value = 0, Name = statType.name };
+                data = new StatData { Value = statType.DefaultValue, Name = statType.name };
                 localStatDatas.Add(data);
             }
 
