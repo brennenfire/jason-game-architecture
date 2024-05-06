@@ -16,9 +16,9 @@ public class StatEntry : MonoBehaviour
         toggleablePanel = GetComponentInParent<ToggleablePanel>();
     }
 
-    public void Bind(Stat stat)
+    public void Bind(Stat statData)
     {
-        statLocal = stat;
+        statLocal = statData;
         nameLocal.SetText(statLocal.Name);
     }
 
@@ -26,8 +26,7 @@ public class StatEntry : MonoBehaviour
     {
         if(toggleablePanel.IsVisible) 
         {
-            string format = "N" + statLocal.StatType.AllowDecimals;
-            value.SetText(statLocal.GetValue().ToString(format));
+            value.SetText(statLocal.GetValue().ToString());
         }
     }
 }
