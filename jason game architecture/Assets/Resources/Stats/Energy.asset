@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllowDecimals: 1
   DefaultValue: 100
-  MinimumValue: 0
+  MinimumValue: 100
