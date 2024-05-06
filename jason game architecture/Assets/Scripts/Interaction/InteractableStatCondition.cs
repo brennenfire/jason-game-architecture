@@ -36,7 +36,7 @@ public class InteractableStatCondition : MonoBehaviour, IMet
 
     public bool Met()
     {
-        int statValue = StatsManager.Instance.GetStatValue(requiredStat);
+        float statValue = StatsManager.Instance.GetStatValue(requiredStat);
         return statValue >= requiredStatValue;
     }
 }
