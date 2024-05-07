@@ -7,10 +7,11 @@ public class ThirdPersonMover : MonoBehaviour
 {
     [SerializeField] float turnSpeed = 1000;
     [SerializeField] StatType moveSpeed;
+    [SerializeField] StatType energy;
+
     float mouseMovement;
     new Rigidbody rigidbody;
     Animator animator;
-    
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -45,6 +46,8 @@ public class ThirdPersonMover : MonoBehaviour
         var velocity = new Vector3(horizontal, 0, vertical);
         velocity *= StatsManager.Instance.GetStatValue(moveSpeed) * Time.fixedDeltaTime;
         var offset = transform.rotation * velocity;
+
+        StatsManager.Instance.Modify(energy, -offset.magnitude);
 
         rigidbody.MovePosition(transform.position + offset);
         animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);

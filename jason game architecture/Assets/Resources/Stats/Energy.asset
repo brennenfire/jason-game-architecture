@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a1540e05f0d542b217e2ac5d87702, type: 3}
   m_Name: Energy
   m_EditorClassIdentifier: 
-  AllowDecimals: 1
+  AllowDecimals: 2
   DefaultValue: 100
-  MinimumValue: 100
+  MinimumValue: 0
