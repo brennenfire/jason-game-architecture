@@ -7716,6 +7716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allStatTypes:
   - {fileID: 11400000, guid: 78ecc086ee557784f81918e16a1f9abe, type: 2}
+  - {fileID: 11400000, guid: baf2137f1ef67d44e9a3cf94c6e445a3, type: 2}
   - {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
   - {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
 --- !u!1 &564602509
@@ -8561,7 +8562,7 @@ GameObject:
   - component: {fileID: 730624302}
   - component: {fileID: 730624301}
   m_Layer: 0
-  m_Name: StatEffectArea (1)
+  m_Name: SlowArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13344,8 +13345,9 @@ GameObject:
   - component: {fileID: 1173452919}
   - component: {fileID: 1173452918}
   - component: {fileID: 1173452922}
+  - component: {fileID: 1173452923}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: RegenCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13449,6 +13451,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384627f39aa560a4586bf03f842278b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1173452923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173452917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46a098dd4246f04f982be2ba279c3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyStat: {fileID: 11400000, guid: 78ecc086ee557784f81918e16a1f9abe, type: 2}
+  amountPerSecond: 5
 --- !u!1 &1189917006
 GameObject:
   m_ObjectHideFlags: 0
@@ -21528,7 +21544,7 @@ GameObject:
   - component: {fileID: 1669506539}
   - component: {fileID: 1669506543}
   m_Layer: 0
-  m_Name: StatEffectArea
+  m_Name: SlowArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -109,4 +109,9 @@ public class StatsManager : MonoBehaviour
             GetStat(statMod.StatType).RemoveStatMod(statMod);
         }
     }
+
+    internal void Modify(object energyStat, float v)
+    {
+        throw new NotImplementedException();
+    }
 }
