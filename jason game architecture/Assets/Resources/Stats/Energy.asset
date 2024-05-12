@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a1540e05f0d542b217e2ac5d87702, type: 3}
   m_Name: Energy
   m_EditorClassIdentifier: 
-  AllowDecimals: 2
+  AllowDecimals: 0
   DefaultValue: 100
   MinimumValue: 0
   Maximum: {fileID: 11400000, guid: baf2137f1ef67d44e9a3cf94c6e445a3, type: 2}

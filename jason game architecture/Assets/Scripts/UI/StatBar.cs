@@ -15,7 +15,7 @@ public class StatBar : MonoBehaviour
         var value = StatsManager.Instance.GetStatValue(statTypeLocal);
         valueText.SetText(value.ToString("N" + statTypeLocal.AllowDecimals));
 
-        //var percent = value / StatsManager.Instance.GetStatValue(statTypeLocal.Maximum);
-        //fill.fillAmount = percent;
+        var percent = value / StatsManager.Instance.GetStatValue(statTypeLocal.Maximum);
+        fill.fillAmount = percent;
     }
 }
