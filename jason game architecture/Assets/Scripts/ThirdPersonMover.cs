@@ -50,8 +50,12 @@ public class ThirdPersonMover : MonoBehaviour
         StatsManager.Instance.Modify(energy, -offset.magnitude);
 
         rigidbody.MovePosition(transform.position + offset);
-        animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
-        animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
+        if (animator != null)
+        {
+            animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
+            animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
+        }
+
         
     }
 }
