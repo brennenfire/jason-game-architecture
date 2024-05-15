@@ -6,4 +6,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Transform shoulders;
     public Transform Shoulders => shoulders;
+
+
 }

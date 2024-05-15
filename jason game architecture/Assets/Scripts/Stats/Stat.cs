@@ -52,6 +52,10 @@ public class Stat
                 newValue = maxValue;
             }
         }
+        if(newValue < StatType.MinimumValue) 
+        {
+            newValue = StatType.MinimumValue;
+        }
         statDataLocal.Value = newValue;
     }
 }
