@@ -15,6 +15,11 @@ public class StatRegenArea : MonoBehaviour
         }
 
         var amount = Time.deltaTime * amountPerSecond;
-        StatsManager.Instance.Modify(energyStat, amount);
+
+        var statsManager = other.GetComponent<StatsManager>();
+        if (statsManager != null)
+        {
+            statsManager.Modify(energyStat, amount);
+        }
     }
 }

@@ -7,16 +7,19 @@ public class Stat
 {
     StatData statDataLocal;
     List<StatMod> mods = new List<StatMod>();
+    StatsManager statsManagerLocal;
+
     public StatType StatType { get; private set; }
 
     public string Name => StatType.name;
 
     
 
-    public Stat(StatType statType, StatData data)
+    public Stat(StatType statType, StatData data, StatsManager statsManager)
     {
         StatType = statType;
         statDataLocal = data;
+        statsManagerLocal = statsManager;
     }
 
     public float GetValue()
@@ -46,7 +49,7 @@ public class Stat
         var newValue = statDataLocal.Value + amount;
         if (StatType.Maximum != null)
         {
-            var maxValue = StatsManager.Instance.GetStatValue(StatType.Maximum);
+            var maxValue = statsManagerLocal.GetStatValue(StatType.Maximum);
             if (newValue > maxValue)
             {
                 newValue = maxValue;

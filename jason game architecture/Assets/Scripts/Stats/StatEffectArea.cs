@@ -13,11 +13,19 @@ public class StatEffectArea : MonoBehaviour
             return;
         }
 
-        StatsManager.Instance.AddStatMods(statMods);
+        var statsManager = other.GetComponent<StatsManager>();
+        if(statsManager != null) 
+        {
+            statsManager.AddStatMods(statMods);
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        StatsManager.Instance.RemoveStatMods(statMods);
+        var statsManager = other.GetComponent<StatsManager>();
+        if(statsManager != null) 
+        {
+            statsManager.RemoveStatMods(statMods);
+        }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class StatsManager : MonoBehaviour
 {
-    public static StatsManager Instance { get; private set; }
     public bool Bound { get; private set; }
 
     [SerializeField] StatType[] allStatTypes;
@@ -15,11 +14,6 @@ public class StatsManager : MonoBehaviour
     void OnValidate()
     {
         allStatTypes = Extensions.GetAllInstances<StatType>();
-    }
-
-    void Awake()
-    {
-        Instance = this;
     }
 
     void Start()
@@ -84,7 +78,7 @@ public class StatsManager : MonoBehaviour
                 localStatDatas.Add(data);
             }
 
-            stats.Add(statType, new Stat(statType, data));
+            stats.Add(statType, new Stat(statType, data, this));
         }
 
         Bound = true;

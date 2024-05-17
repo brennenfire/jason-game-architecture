@@ -9,13 +9,19 @@ public class StatBar : MonoBehaviour
     [SerializeField] TMP_Text valueText;
     [SerializeField] Image fill;
     [SerializeField] StatType statTypeLocal;
+    StatsManager statsManager;
+
+    void Awake()
+    {
+        statsManager = FindObjectOfType<StatsManager>();    
+    }
 
     void Update()
     {
-        var value = StatsManager.Instance.GetStatValue(statTypeLocal);
+        var value = statsManager.GetStatValue(statTypeLocal);
         valueText.SetText(value.ToString("N" + statTypeLocal.AllowDecimals));
 
-        var percent = value / StatsManager.Instance.GetStatValue(statTypeLocal.Maximum);
+        var percent = value / statsManager.GetStatValue(statTypeLocal.Maximum);
         fill.fillAmount = percent;
     }
 }

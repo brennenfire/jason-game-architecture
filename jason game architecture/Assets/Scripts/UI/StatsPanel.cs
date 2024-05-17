@@ -8,11 +8,12 @@ public class StatsPanel : ToggleablePanel
 
     IEnumerator Start()
     {
-        while(!StatsManager.Instance.Bound)
+        var statsManager = FindObjectOfType<StatsManager>();
+        while(statsManager.Bound)
         {
             yield return new WaitForSeconds(1.0f);
         }
-        var allStats = StatsManager.Instance.GetAll();
+        var allStats = statsManager.GetAll();
         foreach (var stat in allStats) 
         {
             var statEntry = Instantiate(statEntryPrefab, statsPanel);
