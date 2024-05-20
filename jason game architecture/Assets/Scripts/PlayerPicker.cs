@@ -11,6 +11,14 @@ public class PlayerPicker : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera camera;
     int playerIndex;
 
+    void Start()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[0].ToggleActive(i == 0);
+        }
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(swapKey))
@@ -21,7 +29,7 @@ public class PlayerPicker : MonoBehaviour
 
     void ActivateNextPlayer()
     {
-        players[playerIndex].GetComponent<ThirdPersonMover>().enabled = false;
+        players[playerIndex].ToggleActive(false);
 
         playerIndex++;
         if(playerIndex >= players.Count) 
@@ -29,7 +37,7 @@ public class PlayerPicker : MonoBehaviour
             playerIndex = 0;
         }
         var playerToActivate = players[playerIndex];
-        playerToActivate.GetComponent<ThirdPersonMover>().enabled = true;
+        playerToActivate.ToggleActive(true);
         camera.Follow = playerToActivate.Shoulders;
     }
 }
