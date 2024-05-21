@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         if (state == true)
         {
             ActivePlayer = this;
+            StatsPanel.FindObjectOfType<StatsPanel>().Bind(statsManager);
         }
     }
 }

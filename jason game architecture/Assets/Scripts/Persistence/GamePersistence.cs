@@ -51,5 +51,6 @@ public class GamePersistence : MonoBehaviour
         FlagManager.Instance.Bind(gameData.GameFlagDatas);
         InteractionManager.Bind(gameData.InteractableDatas);
         PlacementManager.Instance.Bind(gameData.PlaceablesDatas);
+        FindObjectOfType<PlayerPicker>().Initialize();
     }
 }

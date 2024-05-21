@@ -11,11 +11,11 @@ public class PlayerPicker : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera camera;
     int playerIndex;
 
-    void Start()
+    public void Initialize()
     {
         for (int i = 0; i < players.Count; i++)
         {
-            players[0].ToggleActive(i == 0);
+            players[i].ToggleActive(i == 0);
         }
     }
 
