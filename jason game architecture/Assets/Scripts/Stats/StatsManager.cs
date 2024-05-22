@@ -7,6 +7,7 @@ public class StatsManager : MonoBehaviour
 {
     public bool Bound { get; private set; }
 
+    [SerializeField] Inventory inventory;
     [SerializeField] StatType[] allStatTypes;
     Dictionary<StatType, Stat> stats = new Dictionary<StatType, Stat>();
     List<StatData> localStatDatas;
@@ -14,11 +15,12 @@ public class StatsManager : MonoBehaviour
     void OnValidate()
     {
         allStatTypes = Extensions.GetAllInstances<StatType>();
+        inventory = GetComponent<Inventory>();
     }
 
     void Start()
     {
-        foreach (var slot in Inventory.Instance.EquipmentSlots)
+        foreach (var slot in inventory.EquipmentSlots)
         {
             slot.Changed += HandleEquipSlotChanged;
             if(slot.Item != null)

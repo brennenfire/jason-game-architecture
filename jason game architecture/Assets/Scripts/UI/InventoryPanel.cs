@@ -6,11 +6,6 @@ public class InventoryPanel : ToggleablePanel
 {
     [SerializeField] InventoryPanelSlot overflowSlot;
 
-    void Start()
-    {
-        Bind(Inventory.Instance);    
-    }
-
     public void Bind(Inventory inventory)
     {
         var panelSlots = GetComponentsInChildren<InventoryPanelSlot>()

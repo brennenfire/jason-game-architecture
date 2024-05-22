@@ -91,7 +91,7 @@ public class InventoryPanelSlot : MonoBehaviour,
 
         if (itemSlotLocal.IsEmpty == false && Focused != null)
         {
-            Inventory.Instance.Swap(itemSlotLocal, Focused.itemSlotLocal);       
+            Player.ActivePlayer.Inventory.Swap(itemSlotLocal, Focused.itemSlotLocal);       
         }
 
         itemIconLocal.color = Color.white;
@@ -108,7 +108,7 @@ public class InventoryPanelSlot : MonoBehaviour,
     {
         if (Input.GetKey(KeyCode.Tab) && itemSlotLocal.IsEmpty == false)
         {
-            Inventory.Instance.AddItem(itemSlotLocal.Item);
+            Player.ActivePlayer.Inventory.AddItem(itemSlotLocal.Item);
         }
         else
         {

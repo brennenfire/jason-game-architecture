@@ -25,12 +25,10 @@ public class Inventory : MonoBehaviour
         allEquipmentSlotTypes = Extensions.GetAllInstances<EquipmentSlotType>();    
     }
 
-    public static Inventory Instance { get; private set; }
     public ItemSlot TopOverflowSlot => OverflowSlots?.FirstOrDefault();
 
     void Awake()
     {
-        Instance = this;
         for (int i = 0; i < GENERAL_SIZE; i++)
         {
             GeneralSlots[i] = new ItemSlot();
