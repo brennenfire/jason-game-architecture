@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GiveItemInteraction : MonoBehaviour
 {
-    public void GiveItem(Item item) => Player.ActivePlayer.Inventory.AddItem(item);
+    public void GiveItem(Item item) => Inventory.Instance.AddItem(item);
 }

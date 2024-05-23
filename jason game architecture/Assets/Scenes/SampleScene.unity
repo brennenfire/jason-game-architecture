@@ -3363,9 +3363,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e45990b29db1924a86e1945097ad46e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 166126727}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e45990b29db1924a86e1945097ad46e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 166126728}
   m_SourcePrefab: {fileID: 100100000, guid: 2e45990b29db1924a86e1945097ad46e, type: 3}
 --- !u!1 &166126720 stripped
 GameObject:
@@ -3468,7 +3465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoulders: {fileID: 1766613108}
-  mover: {fileID: 166126723}
 --- !u!114 &166126727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3486,48 +3482,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: baf2137f1ef67d44e9a3cf94c6e445a3, type: 2}
   - {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
   - {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
---- !u!114 &166126728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166126720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35414b0ac8e51814b94f676945fa660b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GeneralSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  CraftingSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  OverflowSlots: []
-  EquipmentSlots: []
-  allEquipmentSlotTypes:
-  - {fileID: 11400000, guid: f178133868cd4334b96783b5a143cb5c, type: 2}
-  - {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
-  - {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
-  - {fileID: 11400000, guid: 5fb9c9d8517d1f641aa315e544f65f37, type: 2}
-  - {fileID: 11400000, guid: ce2c019d1cd8bf64689f5a683d72b011, type: 2}
-  - {fileID: 11400000, guid: f0abb44c131e0024a8bd45ceb222f630, type: 2}
-  debugItem: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
 --- !u!1 &178993757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,9 +4753,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 816135563}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 816135564}
   m_SourcePrefab: {fileID: 100100000, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
 --- !u!137 &226884187 stripped
 SkinnedMeshRenderer:
@@ -9804,7 +9755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoulders: {fileID: 301452936}
-  mover: {fileID: 816135554}
 --- !u!114 &816135563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9822,48 +9772,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: baf2137f1ef67d44e9a3cf94c6e445a3, type: 2}
   - {fileID: 11400000, guid: f3fc8cadf02c8c64f841bc8a94985388, type: 2}
   - {fileID: 11400000, guid: eafce16792f413349a0882c642ed3c91, type: 2}
---- !u!114 &816135564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816135553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35414b0ac8e51814b94f676945fa660b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GeneralSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  CraftingSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  OverflowSlots: []
-  EquipmentSlots: []
-  allEquipmentSlotTypes:
-  - {fileID: 11400000, guid: f178133868cd4334b96783b5a143cb5c, type: 2}
-  - {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
-  - {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
-  - {fileID: 11400000, guid: 5fb9c9d8517d1f641aa315e544f65f37, type: 2}
-  - {fileID: 11400000, guid: ce2c019d1cd8bf64689f5a683d72b011, type: 2}
-  - {fileID: 11400000, guid: f0abb44c131e0024a8bd45ceb222f630, type: 2}
-  debugItem: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
 --- !u!1001 &820578124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15446,6 +15354,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336181537}
   m_CullTransparentMesh: 1
+--- !u!1 &1341069254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341069256}
+  - component: {fileID: 1341069255}
+  m_Layer: 0
+  m_Name: '[INVENTORY]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1341069255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341069254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35414b0ac8e51814b94f676945fa660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GeneralSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  CraftingSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  OverflowSlots: []
+  EquipmentSlots: []
+  allEquipmentSlotTypes:
+  - {fileID: 11400000, guid: f178133868cd4334b96783b5a143cb5c, type: 2}
+  - {fileID: 11400000, guid: e3ac139a9b71a7648a68b5f0271a10cb, type: 2}
+  - {fileID: 11400000, guid: c5b277e6410fca342a887507156ed19b, type: 2}
+  - {fileID: 11400000, guid: 5fb9c9d8517d1f641aa315e544f65f37, type: 2}
+  - {fileID: 11400000, guid: ce2c019d1cd8bf64689f5a683d72b011, type: 2}
+  - {fileID: 11400000, guid: f0abb44c131e0024a8bd45ceb222f630, type: 2}
+  debugItem: {fileID: 11400000, guid: 55baf9bde1ebb4848956cd73d71ab5f7, type: 2}
+--- !u!4 &1341069256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341069254}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.654175, y: 1.8267505, z: 11.979378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1399585532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1359335552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15587,6 +15569,7 @@ Transform:
   m_Children:
   - {fileID: 1651223223}
   - {fileID: 476215930}
+  - {fileID: 1341069256}
   - {fileID: 83661646}
   - {fileID: 811502896}
   - {fileID: 1685362101}

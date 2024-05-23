@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player ActivePlayer { get; private set; }
+    public static Player ActivePlayer { get; private set; }   
 
-    [SerializeField] Inventory inventory;
     [SerializeField] Transform shoulders;
     [SerializeField] ThirdPersonMover mover;
     StatsManager statsManager;
-
-    public Inventory Inventory => Inventory;
 
     public Transform Shoulders => shoulders;
 
@@ -22,7 +19,6 @@ public class Player : MonoBehaviour
     {
         mover = GetComponent<ThirdPersonMover>();
         statsManager = GetComponent<StatsManager>();
-        inventory = GetComponent<Inventory>();
     }
 
     public void Bind(PlayerData playerData)
@@ -36,10 +32,7 @@ public class Player : MonoBehaviour
         if (state == true)
         {
             ActivePlayer = this;
-            FindObjectOfType<StatsPanel>().Bind(statsManager);
-            FindObjectOfType<CraftingPanel>().Bind(inventory);
-            FindObjectOfType<EquipmentPanel>().Bind(inventory);
-            FindObjectOfType<InventoryPanel>().Bind(inventory);
+            StatsPanel.FindObjectOfType<StatsPanel>().Bind(statsManager);
         }
     }
 }
